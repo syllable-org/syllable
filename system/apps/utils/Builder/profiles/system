@@ -105,7 +105,6 @@ resources
 modules
 ;	Hangs during configuring:
 ;	sys/boot/grub-0.95
-	other/config/grub
 	other/config/default
 	other/config/etc
 	other/fonts
