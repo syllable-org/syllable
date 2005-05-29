@@ -1,4 +1,3 @@
-#include "shortcutkey.h"
 #include <util/shortcutkey.h>
 #include <gui/font.h>
 #include <stdlib.h>
