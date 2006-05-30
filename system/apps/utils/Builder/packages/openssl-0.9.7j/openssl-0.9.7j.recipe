@@ -28,7 +28,7 @@ test-targets
 ;	report
 
 ;install-prefix-var	INSTALL_PREFIX
-;documentation		README README.ENGINE FAQ PROBLEMS LICENSE NEWS doc
+;documentation		README README.ENGINE FAQ PROBLEMS LICENSE NEWS CHANGES doc
 ;develop-docs		INSTALL
 ;internal-docs		README.ASN1
 
