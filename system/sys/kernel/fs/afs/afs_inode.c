@@ -526,7 +526,7 @@ status_t afs_do_write_inode( AfsVolume_s * psVolume, AfsInode_s * psInode )
  * \return 0 on success, negative error code on failure
  * \sa
  *****************************************************************************/
-static int afs_do_read( AfsVolume_s * psVolume, AfsInode_s * psInode, char *pBuffer, off_t nPos, size_t nSize, bool bDirect )
+static int afs_do_read( AfsVolume_s * psVolume, AfsInode_s * psInode, char *pBuffer, off_t nPos, size_t nSize )
 {
 	const int nBlockSize = psVolume->av_psSuperBlock->as_nBlockSize;
 	off_t nFirstBlock = nPos / nBlockSize;
@@ -625,7 +625,7 @@ static int afs_do_read( AfsVolume_s * psVolume, AfsInode_s * psInode, char *pBuf
 			}
 			else
 			{
-				nError = maybe_cached_read( psVolume->av_nDevice, nBlockAddr, pBuffer, nLen, nBlockSize, bDirect );
+				nError = cached_read( psVolume->av_nDevice, nBlockAddr, pBuffer, nLen, nBlockSize );
 				if( nError >= 0 )
 				{
 					nRunLength -= nLen;
@@ -711,11 +711,10 @@ static int afs_do_read( AfsVolume_s * psVolume, AfsInode_s * psInode, char *pBuf
  * \param pBuffer	Buffer to write from
  * \param nPos		Start position in file to write at
  * \param a_nSize	Number of octets to write
- * \param bDirect	Write via. the block cache or direct
  * \return 0 on success, negative error code on failure
  * \sa
  *****************************************************************************/
-int afs_do_write( AfsVolume_s * psVolume, AfsInode_s * psInode, const char *pBuffer, off_t nPos, size_t a_nSize, bool bDirect )
+int afs_do_write( AfsVolume_s * psVolume, AfsInode_s * psInode, const char *pBuffer, off_t nPos, size_t a_nSize )
 {
 	const int nBlockSize = psVolume->av_psSuperBlock->as_nBlockSize;
 	int nSize = a_nSize;
@@ -837,7 +836,7 @@ int afs_do_write( AfsVolume_s * psVolume, AfsInode_s * psInode, const char *pBuf
 			}
 			else
 			{
-				nError = maybe_cached_write( psVolume->av_nDevice, nBlockAddr, pBuffer, nLen, nBlockSize, bDirect );
+				nError = cached_write( psVolume->av_nDevice, nBlockAddr, pBuffer, nLen, nBlockSize );
 				if( nError >= 0 )
 				{
 					nRunLength -= nLen;
@@ -945,7 +944,7 @@ int afs_do_write( AfsVolume_s * psVolume, AfsInode_s * psInode, const char *pBuf
  * \return amount read on success, negative error code on failure
  * \sa
  *****************************************************************************/
-int afs_read_pos( AfsVolume_s * psVolume, AfsInode_s * psInode, void *pBuffer, off_t nPos, size_t nSize, bool bDirect )
+int afs_read_pos( AfsVolume_s * psVolume, AfsInode_s * psInode, void *pBuffer, off_t nPos, size_t nSize )
 {
 	int nError = 0;
 
@@ -959,7 +958,7 @@ int afs_read_pos( AfsVolume_s * psVolume, AfsInode_s * psInode, void *pBuffer, o
 	}
 	if( nSize > 0 )
 	{
-		nError = afs_do_read( psVolume, psInode, pBuffer, nPos, nSize, bDirect );
+		nError = afs_do_read( psVolume, psInode, pBuffer, nPos, nSize );
 	}
 	else
 	{

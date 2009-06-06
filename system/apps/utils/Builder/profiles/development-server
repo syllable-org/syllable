@@ -1,4 +1,0 @@
-; Development files for Syllable; split off from the base system
-
-name				SyllableServer-0.4-development
-modules				SyllableServer-0.4-development

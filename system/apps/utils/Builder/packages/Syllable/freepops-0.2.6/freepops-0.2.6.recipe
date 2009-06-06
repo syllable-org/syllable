@@ -1,8 +1,0 @@
-authors
-	Rui Caridade
-	Kaj de Vos
-status				testing
-
-configure			./configure.sh syllable
-
-;make-targets		syllable

@@ -1,8 +1,0 @@
-sys-compat.bin.tgz contains older versions of libatheos required for binary
-compatibility with older software.
-
-The (Very old) libgui.0.1.7.so and libgui.0.2.0.so have now been removed.
-
---
-Vanders
-

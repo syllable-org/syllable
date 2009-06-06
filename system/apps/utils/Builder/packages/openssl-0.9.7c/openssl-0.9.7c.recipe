@@ -1,9 +1,0 @@
-authors 			Kaj de Vos
-status				testing
-
-configure-cmd		config
-configure-args
-;	--prefix=/usr --openssldir=/usr/openssl
-configure-options	shared threads
-;install-prefix-var	INSTALL_PREFIX
-documentation		README README.ASN1 README.ENGINE INSTALL PROBLEMS LICENSE NEWS CHANGES doc

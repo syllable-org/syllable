@@ -1,4 +1,0 @@
-authors				Kaj de Vos
-status				testing
-
-configure-options	--with-libxml-dir=/resources/libxml2

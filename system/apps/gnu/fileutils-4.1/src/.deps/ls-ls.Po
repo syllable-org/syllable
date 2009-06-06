@@ -1,4 +1,0 @@
-ls-ls.o : \
- ls-ls.c ls.h
-ls-ls.c :
-ls.h :

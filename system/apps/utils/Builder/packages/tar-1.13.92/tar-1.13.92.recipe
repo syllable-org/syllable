@@ -1,5 +1,0 @@
-authors			Kaj de Vos
-notes			Needs a patch to glibc/include/sys/mtio.h
-licenses		GPL
-patch-config	config
-documentation	README COPYING ABOUT-NLS NEWS ChangeLog TODO AUTHORS THANKS

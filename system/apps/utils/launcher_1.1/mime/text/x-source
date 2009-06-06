@@ -1,8 +1,0 @@
-DefaultCommand=/usr/aedit/bin/aedit %f
-DefaultIcon=/Applications/Launcher/icons/development.png
-Match=\.c$
-Match=\.cpp$
-Match=\.h$
-Match=^Makefile
-
-

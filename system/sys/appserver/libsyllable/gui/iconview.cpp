@@ -1378,13 +1378,9 @@ public:
 					}
 					m->Unlock();
 				}
-				else
-				{
-					/* Not an alphanumeric key, pass it upwards */
-					os::View::KeyDown( pzString, pzRawString, nQualifiers );
-				}
 			}
 		}
+		os::View::KeyDown( pzString, pzRawString, nQualifiers );
 	}
 	
 	void FrameSized( const os::Point& cDelta )
@@ -2267,11 +2263,6 @@ void IconView::MakeFocus( bool bFocus )
 	m->m_pcView->MakeFocus( bFocus );
 }
 
-void IconView::Activated( bool bIsActive )
-{
-	if( bIsActive ) m->m_pcView->MakeFocus( true );
-}
-
 void IconView::SetTabOrder( int nOrder )
 {
 	m->m_pcView->SetTabOrder( nOrder );
@@ -2280,13 +2271,13 @@ void IconView::SetTabOrder( int nOrder )
 
 int IconView::GetTabOrder() const
 {
-	return( View::GetTabOrder() );
+	return( m->m_pcView->GetTabOrder() );
 }
 
 /* NOTE: This should be removed in the next libsyllable version. The const version above is the correct one. */
 int IconView::GetTabOrder()
 {
-	return( View::GetTabOrder() );
+	return( m->m_pcView->GetTabOrder() );
 }
 
 void IconView::__ICV_reserved2__() {}

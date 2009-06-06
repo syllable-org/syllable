@@ -25,14 +25,22 @@ static int random_close( void* node, void* cookie )
 
 static int random_read( void* node, void* cookie, off_t pos, void* buf, size_t length )
 {
-	int* buffer = (int*)buf;
-	int count = length / sizeof(int);
-	int n;
+	char* buffer = (char*)buf;
+	int i, j, k;
 
-	for( n = 0;  n < count;  n++, buffer++ )
-		*buffer = rand();
+	j = k = 0;
 
-	return( count * sizeof(int) );
+	for( i = 0;  i < length;  i++ )
+	{
+		j = rand();
+
+		if( j != k )
+			buffer[i] = j % 256;
+
+		k = j;
+	}
+
+	return( length );
 }
 
 

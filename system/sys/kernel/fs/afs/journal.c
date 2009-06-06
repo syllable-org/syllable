@@ -924,24 +924,17 @@ static int afs_wait_for_log_space( AfsVolume_s * psVolume, int nBlockCount )
 {
 	int nLoops = 0;
 
-	if( nBlockCount > psVolume->av_nJournalSize )
-	{
-		panic( "%d log blocks requested but only %d available for this volume!\n", nBlockCount, psVolume->av_nJournalSize );
-		return( -1 );
-	}
-
 	while( psVolume->av_nPendingLogBlocks + nBlockCount > psVolume->av_nJournalSize )
 	{
 		if( nLoops++ > 500 )
 		{
-			printk( "Wait for %d log blocks to be free (pending %d, max. %d)\n", nBlockCount, psVolume->av_nPendingLogBlocks, psVolume->av_nJournalSize );
-			snooze( 500000 );
+			printk( "Wait for %d log blocks to be free(%d)\n", nBlockCount, psVolume->av_nPendingLogBlocks );
 		}
 		if( psVolume->av_psLastTrans != NULL )
 		{
 			afs_force_flush_transaction( psVolume, psVolume->av_psLastTrans );
 		}
-		flush_device_cache( psVolume->av_nDevice, true );
+//          flush_device_cache( psVolume->av_nDevice, true );
 		if( psVolume->av_psLastTrans != NULL && psVolume->av_psLastTrans->at_bWrittenToLog && psVolume->av_psLastTrans->at_bWrittenToDisk == false )
 		{
 			afs_write_transaction_to_disk( psVolume, psVolume->av_psLastTrans );
@@ -1157,11 +1150,7 @@ static int afs_merge_transactions( AfsVolume_s * psVolume )
 		printk( "afs_merge_transactions() the transaction is already written to the log\n" );
 		return( -EINVAL );
 	}
-	if( afs_wait_for_log_space( psVolume, psVolume->av_nNewBlockCount + psVolume->av_nJournalSize / 128 ) )
-	{
-		printk( "afs_merge_transactions() the transaction is too large\n" );
-		return( -EINVAL );
-	}
+	afs_wait_for_log_space( psVolume, psVolume->av_nNewBlockCount + psVolume->av_nJournalSize / 128 );
 
 	// Here we merge the blocks touched during the current transaction with blocks
 	// from previous transactions.
@@ -1673,30 +1662,30 @@ int afs_start_journal_flusher( AfsVolume_s * psVolume )
  ****************************************************************************/
 void afs_flush_journal( AfsVolume_s * psVolume )
 {
-	kerndbg( KERN_DEBUG, "Flushing journal:\n" );
+	printk( "Flushing journal:\n" );
 
 	LOCK( psVolume->av_hJournalLock );
 
+	flush_device_cache( psVolume->av_nDevice, false );
+
 	if( psVolume->av_nOldBlockCount + psVolume->av_nNewBlockCount + psVolume->av_nJournalSize / 128 > psVolume->av_nJournalSize )
 	{
-		kerndbg( KERN_DEBUG, "flush old journal entry\n" );
+		printk( "flush old journal entry\n" );
 		afs_write_transaction_to_log( psVolume );
 	}
-
-#if 0
+	printk( "Merge last transaction\n" );
 	if( psVolume->av_nNewBlockCount != 0 )
 	{
 		panic( "afs_flush_journal() found a half-finished transaction in the journal!\n" );
-		/* afs_merge_transactions( psVolume ); */
+//      afs_merge_transactions( psVolume );
 	}
-#endif
-	kerndbg( KERN_DEBUG, "Write last transaction to the journal\n" );
+	printk( "Write last transaction to the journal\n" );
 	afs_write_transaction_to_log( psVolume );
-	kerndbg( KERN_DEBUG, "Wait for the transactions to finish\n" );
+	printk( "Wait for the transactions to finish\n" );
 	afs_wait_for_log_space( psVolume, psVolume->av_nJournalSize );
-	kerndbg( KERN_DEBUG, "All journal entries flushed\n" );
-
+	printk( "All journal entries flushed\n" );
 	UNLOCK( psVolume->av_hJournalLock );
+
 }
 
 /** Read a block from the journal

@@ -1,9 +1,0 @@
-authors				Kaj de Vos
-
-inherits			gnu
-
-packages			patch/patch-2.5.4
-
-patch-config
-
-documentation		README COPYING NEWS ChangeLog AUTHORS

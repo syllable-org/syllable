@@ -1,5 +1,0 @@
-authors			Kaj de Vos
-licenses		GPL
-no-build-dir
-patch-legacy-config
-documentation	README COPYING ABOUT-NLS NEWS ChangeLog TODO AUTHORS THANKS

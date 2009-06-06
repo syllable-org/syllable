@@ -1,9 +1,0 @@
-authors
-	Kaj de Vos
-	Terry Glass
-status				testing
-
-inherits			libjpeg-6b-static
-
-configure-options	--enable-shared
-

@@ -174,9 +174,6 @@ DropdownMenu::DropdownMenu( const Rect & cFrame, const String& cName, uint32 nRe
 			pRaster += g_pcArrows->GetBytesPerRow() - ARROW_WIDTH;
 		}
 	}
-	
-	/* Only the child TextView should be navigable by keyboard */
-	View::SetTabOrder( NO_TAB_ORDER );
 }
 
 DropdownMenu::~DropdownMenu()
@@ -631,16 +628,16 @@ void DropdownMenu::KeyDown( const char *pzString, const char *pzRawString, uint3
 void DropdownMenu::SetTabOrder( int nOrder )
 {
 	m_pcEditBox->SetTabOrder( nOrder );
+	View::SetTabOrder();
 }
 
 int DropdownMenu::GetTabOrder() const
 {
-	return( View::GetTabOrder() );
+	return( m_pcEditBox->GetTabOrder() );
 }
 
 void DropdownMenu::Activated( bool bIsActive )
 {
-	if( bIsActive ) m_pcEditBox->MakeFocus( true );
 	Invalidate();
 	Flush();
 }

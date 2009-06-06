@@ -1,8 +1,0 @@
-authors				Kaj de Vos
-
-inherits			gnu
-
-packages			groff/groff-1.19
-
-documentation		README INSTALL VERSION REVISION MANIFEST PROBLEMS BUG-REPORT COPYING FDL NEWS TODO PROJECTS MORE.STUFF
-;distro-files		bin/tbl bin/nroff
