@@ -8,7 +8,7 @@ description
 licenses			other PD
 
 home				dejavu.sourceforge.net
-packages			dejavu/dejavu-fonts-ttf-2.25
+packages			dejavu/dejavu-fonts-ttf-2.29
 
 make				true
 
