@@ -3,10 +3,10 @@ authors
 	Kaj de Vos
 status				testing
 
-inherits			ghostscript-8.60
+inherits			GhostScript-8.64
 
 configure-options
-;	--datadir=$IMAGE/resources/ghostscript/share/
+;	--datadir=$IMAGE/resources/GhostScript/share/
 	--with-fontpath=/system/fonts
 ;	cups is not an option any more:
 ;	--with-drivers=PS,cups
@@ -14,5 +14,5 @@ configure-options
 	--without-jbig2dec
 
 install-vars
-;	datadir	$IMAGE/resources/ghostscript/share/
-	gsdir	$IMAGE/resources/ghostscript/share/ghostscript/
+;	datadir	$IMAGE/resources/GhostScript/share/
+	gsdir	$IMAGE/resources/GhostScript/share/ghostscript/
