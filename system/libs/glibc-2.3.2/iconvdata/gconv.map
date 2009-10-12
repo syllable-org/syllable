@@ -1,7 +1,0 @@
-{
-global:
-  gconv;
-  gconv_init;
-local:
-  *;
-};

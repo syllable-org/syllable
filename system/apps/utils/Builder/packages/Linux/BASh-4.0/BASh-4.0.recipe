@@ -1,9 +1,0 @@
-authors				Kaj de Vos
-status				testing
-
-inherits			gnu
-
-configure-options
-	--build=i486-pc-linux-gnu
-	--without-bash-malloc
-	--with-installed-readline

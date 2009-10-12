@@ -1,4 +1,0 @@
-ls-dir.o : \
- ls-dir.c ls.h
-ls-dir.c :
-ls.h :
