@@ -63,6 +63,7 @@ struct in_pktinfo
 
 #ifdef __KERNEL__
 
+#include <kernel/socket.h>
 
 /* Structure describing an Internet (IP) socket address. */
 #define __SOCK_SIZE__	16		/* sizeof(struct sockaddr)	*/
