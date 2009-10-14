@@ -12,10 +12,11 @@
  * These are buggy as well..
  */
 
-#include <atheos/ctype.h>
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/string.h>
+#include <kernel/types.h>
+#include <kernel/ctype.h>
+#include <kernel/string.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <macros.h>
 
 char *___strtok = NULL;

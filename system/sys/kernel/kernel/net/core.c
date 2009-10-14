@@ -1,4 +1,3 @@
-
 /*
  *  Syllable Kernel
  *  net/core.c
@@ -21,12 +20,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
-
-#include <atheos/kernel.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-
 #include <net/net.h>
 #include <net/ip.h>
 #include <net/in.h>

@@ -1,4 +1,3 @@
-
 /*
  *  The AtheOS kernel
  *  Copyright (C) 1999 - 2001 Kurt Skauen
@@ -22,19 +21,19 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <atheos/kernel.h>
-#include <atheos/kdebug.h>
-#include <atheos/socket.h>
-#include <atheos/time.h>
+#include <kernel/kdebug.h>
+#include <kernel/socket.h>
+#include <kernel/time.h>
+#include <kernel/semaphore.h>
+#include <kernel/spinlock.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <net/net.h>
 #include <net/ip.h>
 #include <net/if_ether.h>
-#include <atheos/semaphore.h>
-#include <atheos/spinlock.h>
-
 #include <macros.h>
 
-#include "inc/sysbase.h"
+#include <inc/sysbase.h>
 
 SPIN_LOCK( g_sQueueSpinLock, "net_packets_slock" );
 

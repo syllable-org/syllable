@@ -18,26 +18,26 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/types.h>
+#include <kernel/irq.h>
+#include <kernel/kdebug.h>
+#include <kernel/areas.h>
+#include <syllable/kernel.h>
+#include <syllable/smp.h>
+#include <syllable/elf.h>
+#include <syllable/syscall.h>
 #include <posix/fcntl.h>
 #include <posix/errno.h>
 #include <posix/limits.h>
-
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/smp.h>
-#include <atheos/elf.h>
-#include <atheos/syscall.h>
-#include <atheos/irq.h>
-
 #include <macros.h>
 
-#include "inc/scheduler.h"
-#include "inc/global.h"
-#include "inc/areas.h"
-#include "inc/image.h"
-#include "inc/mman.h"
-#include "inc/intel.h"
-#include "inc/smp.h"
+#include <inc/scheduler.h>
+#include <inc/global.h>
+#include <inc/areas.h>
+#include <inc/image.h>
+#include <inc/mman.h>
+#include <inc/intel.h>
+#include <inc/smp.h>
 
 #define MAX_ARGS_PER_NODE 500
 

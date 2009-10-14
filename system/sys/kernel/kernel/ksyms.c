@@ -19,41 +19,41 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/threads.h>
+#include <kernel/image.h>
+#include <kernel/semaphore.h>
+#include <kernel/pci.h>
+#include <kernel/socket.h>
+#include <kernel/time.h>
+#include <kernel/device.h>
+#include <kernel/tld.h>
+#include <kernel/msgport.h>
+#include <kernel/ctype.h>
+#include <kernel/dma.h>
+#include <kernel/bootmodules.h>
+#include <kernel/config.h>
+#include <kernel/irq.h>
+#include <kernel/spinlock.h>
+#include <kernel/timer.h>
+#include <kernel/random.h>
+#include <kernel/nls.h>
+#include <kernel/resource.h>
+#include <kernel/bcache.h>
+#include <kernel/areas.h>
+#include <kernel/kdebug.h>
+#include <syllable/udelay.h>
+#include <syllable/kernel.h>
 #include <posix/ioctl.h>
-
-#include <atheos/kernel.h>
-#include <atheos/threads.h>
-#include <atheos/image.h>
-#include <atheos/semaphore.h>
-#include <atheos/pci.h>
-#include <atheos/bcache.h>
-#include <atheos/socket.h>
-#include <net/net.h>
-#include <atheos/time.h>
-#include <atheos/irq.h>
-#include <atheos/device.h>
-#include <atheos/udelay.h>
-#include <atheos/ctype.h>
-#include <atheos/dma.h>
-#include <atheos/spinlock.h>
-#include <atheos/timer.h>
-#include <atheos/msgport.h>
-#include <atheos/bootmodules.h>
-#include <atheos/tld.h>
-#include <atheos/random.h>
-#include <atheos/config.h>
-#include <atheos/nls.h>
-#include <atheos/resource.h>
-
 #include <posix/fcntl.h>
 #include <posix/unistd.h>
 #include <posix/signal.h>
+#include <net/net.h>
 
-#include "inc/ksyms.h"
-#include "inc/mman.h"
-#include "inc/scheduler.h"
-#include "inc/array.h"
-#include "inc/swap.h"
+#include <inc/ksyms.h>
+#include <inc/mman.h>
+#include <inc/scheduler.h>
+#include <inc/array.h>
+#include <inc/swap.h>
 
 typedef struct
 {

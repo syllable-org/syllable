@@ -18,27 +18,25 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/time.h>
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/uio.h>
 #include <posix/fcntl.h>
 #include <posix/ioctls.h>
 #include <posix/signal.h>
-
-#include <atheos/kernel.h>
-#include <atheos/time.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-
-#include <macros.h>
-
 #include <net/net.h>
 #include <net/in.h>
 #include <net/ip.h>
 #include <net/if_ether.h>
 #include <net/icmp.h>
-#include "tcpdefs.h"
+#include <macros.h>
 
-#include "inc/areas.h"
+#include <inc/areas.h>
+#include <net/tcpdefs.h>
 
 extern SocketOps_s g_sTCPOperations;
 

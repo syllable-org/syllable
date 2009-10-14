@@ -6,15 +6,16 @@
  *
  */
 
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/spinlock.h>
-#include <atheos/kernel.h>
+#include <kernel/types.h>
+#include <kernel/semaphore.h>
+#include <kernel/resource.h>
+#include <kernel/spinlock.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <atheos/resource.h>
-#include <atheos/semaphore.h>
 #include <macros.h>
-#include "inc/sysbase.h"
+
+#include <inc/sysbase.h>
 
 /** \struct Resource_s
  *  \ingroup DriverAPI

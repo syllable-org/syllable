@@ -18,17 +18,18 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/types.h>
+#include <kernel/spinlock.h>
+#include <kernel/kdebug.h>
+#include <kernel/areas.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/spinlock.h>
-
 #include <macros.h>
 
-#include "inc/scheduler.h"
-#include "inc/sysbase.h"
-#include "inc/areas.h"
-#include "inc/swap.h"
+#include <inc/scheduler.h>
+#include <inc/sysbase.h>
+#include <inc/areas.h>
+#include <inc/swap.h>
 
 static const uint32_t WAIT_LENGTH = 10000;
 

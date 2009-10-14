@@ -1,4 +1,3 @@
-
 /*
  *  The AtheOS kernel
  *  Copyright (C) 1999 - 2001 Kurt Skauen
@@ -22,18 +21,16 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/types.h>
+#include <kernel/kdebug.h>
+#include <kernel/filesystem.h>
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/uio.h>
 #include <posix/fcntl.h>
-
-#include <atheos/kernel.h>
-#include <atheos/kdebug.h>
-#include <atheos/filesystem.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-
-#include <macros.h>
-
 #include <net/net.h>
 #include <net/ip.h>
 #include <net/if.h>
@@ -46,8 +43,9 @@
 #include <net/in.h>
 #include <net/route.h>
 #include <net/sockios.h>
+#include <macros.h>
 
-#include "vfs/vfs.h"
+#include <vfs/vfs.h>
 
 /*****************************************************************************
  * NAME:

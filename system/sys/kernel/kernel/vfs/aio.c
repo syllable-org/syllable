@@ -17,12 +17,14 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/types.h>
+#include <kernel/threads.h>
+#include <kernel/kdebug.h>
 #include <posix/errno.h>
-#include <atheos/threads.h>
 
-#include "vfs.h"
-#include "inc/aio.h"
-#include "inc/scheduler.h"
+#include <vfs/vfs.h>
+#include <inc/aio.h>
+#include <inc/scheduler.h>
 
 /**
  * Process all queued async I/O requests.

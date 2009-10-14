@@ -2,10 +2,10 @@
 #include <atheos/kernel.h>
 #include <atheos/smp.h>
 #include <atheos/kdebug.h>
-#include <atheos/atomic.h>
-#include <atheos/nls.h>
-#include <atheos/list.h>
 #include <posix/errno.h>
+#include <kernel/list.h>
+#include <kernel/nls.h>
+#include <kernel/atomic.h>
 #include <macros.h>
 
 typedef struct {

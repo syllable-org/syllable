@@ -12,10 +12,9 @@
  */
 
 #include <posix/types.h>
-#include <atheos/ctype.h>
 
-#include <atheos/stdlib.h>
-
+#include <kernel/ctype.h>
+#include <kernel/stdlib.h>
 
 unsigned long simple_strtoul( const char *cp, char **endp, unsigned int base )
 {

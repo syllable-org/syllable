@@ -20,14 +20,14 @@
  *	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA	02111-1307	USA
  */
 
+#include <kernel/types.h>
+#include <kernel/kdebug.h>
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/image.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
-
-#include <atheos/kernel.h>
-#include <atheos/kdebug.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-#include <atheos/image.h>
-
 #include <net/net.h>
 #include <net/ip.h>
 #include <net/in.h>
@@ -39,10 +39,9 @@
 #include <net/icmp.h>
 #include <net/sockios.h>
 #include <net/route.h>
-
 #include <macros.h>
 
-#include "inc/semaphore.h"
+#include <inc/semaphore.h>
 
 /* Selective debugging level overrides */
 #ifdef KERNEL_DEBUG_NET

@@ -1,4 +1,3 @@
-
 /*
  *  The AtheOS kernel
  *  Copyright (C) 2001 Kurt Skauen
@@ -19,6 +18,12 @@
  */
 
 
+#include <kernel/types.h>
+#include <kernel/msgport.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
+#include <syllable/smp.h>
 #include <posix/errno.h>
 #include <posix/fcntl.h>
 #include <posix/unistd.h>
@@ -26,22 +31,14 @@
 #include <posix/utime.h>
 #include <posix/time.h>
 #include <posix/limits.h>
-
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/smp.h>
-#include <atheos/msgport.h>
-#include <atheos/semaphore.h>
-
-#include <gui/guidefines.h>
-
 #include <macros.h>
 
-#include "inc/scheduler.h"
-#include "inc/sysbase.h"
-#include "vfs.h"
+#include <vfs/vfs.h>
+#include <inc/scheduler.h>
+#include <inc/sysbase.h>
 
-
+/* XXXKV: This isn't good! Whatever is in this header we're using needs to move to a seperate header in <syllable/> */
+#include <gui/guidefines.h>
 
 static int g_nLastMonitorID = 1;
 static sem_id g_hNodeMonitorMutex;

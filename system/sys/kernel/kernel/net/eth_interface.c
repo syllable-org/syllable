@@ -1,4 +1,3 @@
-
 /*
  *  The AtheOS kernel
  *  Copyright (C) 1999 - 2001 Kurt Skauen
@@ -18,8 +17,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <atheos/kernel.h>
-#include <atheos/elf.h>
+#include <kernel/types.h>
+#include <kernel/kdebug.h>
+#include <kernel/threads.h>
+#include <syllable/kernel.h>
+#include <syllable/elf.h>
 #include <posix/ioctl.h>
 #include <net/net.h>
 #include <net/if.h>
@@ -29,7 +31,6 @@
 #include <net/ip.h>
 #include <posix/dirent.h>
 #include <posix/errno.h>
-
 #include <macros.h>
 
 /* Selective debugging level overrides */

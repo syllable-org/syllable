@@ -17,7 +17,18 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <atheos/ctype.h>
+#include <kernel/config.h>
+#include <kernel/resource.h>
+#include <kernel/multiboot.h>
+#include <kernel/irq.h>
+#include <kernel/bcache.h>
+#include <kernel/ctype.h>
+#include <kernel/semaphore.h>
+#include <kernel/device.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
+#include <syllable/syscall.h>
+#include <syllable/smp.h>
 #include <posix/fcntl.h>
 #include <posix/resource.h>
 #include <posix/wait.h>
@@ -25,31 +36,18 @@
 #include <posix/unistd.h>
 #include <posix/dirent.h>
 #include <posix/stat.h>
-
-#include <atheos/kernel.h>
-#include <atheos/resource.h>
-#include <atheos/syscall.h>
-#include <atheos/smp.h>
-#include <atheos/irq.h>
-#include <atheos/semaphore.h>
-#include <atheos/bcache.h>
-#include <atheos/multiboot.h>
-#include <atheos/device.h>
-#include <atheos/config.h>
-
 #include <net/net.h>
-
 #include <macros.h>
 
-#include "vfs/vfs.h"
-#include "inc/scheduler.h"
-#include "inc/areas.h"
-#include "inc/bcache.h"
-#include "inc/smp.h"
-#include "inc/sysbase.h"
-#include "inc/swap.h"
-#include "inc/pit_timer.h"
-#include "version.h"
+#include <vfs/vfs.h>
+#include <inc/scheduler.h>
+#include <inc/areas.h>
+#include <inc/bcache.h>
+#include <inc/smp.h>
+#include <inc/sysbase.h>
+#include <inc/swap.h>
+#include <inc/pit_timer.h>
+#include <version.h>
 
 extern int _end;
 

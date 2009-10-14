@@ -17,19 +17,19 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/device.h>
-#include <atheos/semaphore.h>
-#include <atheos/image.h>
-#include <atheos/udelay.h>
+#include <kernel/types.h>
+#include <kernel/device.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
+#include <syllable/image.h>
+#include <syllable/udelay.h>
 #include <posix/limits.h>
 #include <posix/errno.h>
-
 #include <macros.h>
 
-#include "inc/sysbase.h"
-#include "vfs.h"
+#include <vfs/vfs.h>
+#include <inc/sysbase.h>
 
 static FileSysDesc_s *load_filesystem( const char *pzName, const char *pzDevicePath );
 

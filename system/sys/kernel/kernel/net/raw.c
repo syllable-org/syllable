@@ -1,19 +1,17 @@
 /*	Authors:	Ville Kallioniemi, <ville.kallioniemi@abo.fi>	*/
 
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/uio.h>
-
-#include <atheos/kernel.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-
-#include <macros.h>
-
 #include <net/net.h>
 #include <net/in.h>
 #include <net/ip.h>
 #include <net/if_ether.h>
 #include <net/raw.h>
+#include <macros.h>
 
 extern SocketOps_s g_sRawOperations;
 static RawPort_s *g_psFirstRawPort = NULL;

@@ -1,4 +1,3 @@
-
 /*
  *  The AtheOS kernel
  *  Copyright (C) 1999 - 2001 Kurt Skauen
@@ -18,23 +17,21 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <kernel/time.h>
+#include <kernel/socket.h>
+#include <kernel/semaphore.h>
+#include <kernel/kdebug.h>
+#include <syllable/kernel.h>
 #include <posix/errno.h>
-
-#include <atheos/kernel.h>
-#include <atheos/time.h>
-#include <atheos/socket.h>
-#include <atheos/semaphore.h>
-
 #include <net/net.h>
 #include <net/in.h>
 #include <net/ip.h>
 #include <net/if_ether.h>
 #include <net/icmp.h>
-#include "tcpdefs.h"
-
 #include <macros.h>
 
-#include "inc/sysbase.h"
+#include <inc/sysbase.h>
+#include <net/tcpdefs.h>
 
 /*
  * Locking policies:
