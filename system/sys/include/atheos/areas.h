@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __ATHEOS_AREA_H__
-#define __ATHEOS_AREA_H__
+#ifndef __F_ATHEOS_AREA_H__
+#define __F_ATHEOS_AREA_H__
 
 #include <atheos/types.h>
 
@@ -100,32 +100,9 @@ typedef struct
 #define AREA_ADDR_SPEC_MASK	0x00000f00
 #define AREA_TOP_DOWN		0x00001000
 
-
-#ifdef	__KERNEL__
-#define	AREA_REMAPPED	0x0020
-#define	AREA_SHARED	0x0040
-#define	AREA_GROWSDOWN	0x0080
-#endif
-
-//  Moved to <atheos/tunables.h>
-//#define	AREA_FIRST_KERNEL_ADDRESS	0x00100000
-//#define	AREA_LAST_KERNEL_ADDRESS	0x7fffffff
-//#define	AREA_FIRST_USER_ADDRESS		0x80000000
-//#define	AREA_LAST_USER_ADDRESS		0xffffffff
-
 /*
  * Functions that can be used outside the area-handling code iteslf
  */
-
-#ifdef __KERNEL__
-area_id	create_area( const char* pzName, void** ppAddress, size_t nSize,
-		     size_t nMaxSize, flags_t nProtection, flags_t nLockMode );
-area_id	sys_create_area( const char* pzName, void** ppAddress, size_t nSize,
-			 flags_t nProtection, flags_t nLockMode );
-#else
-area_id	create_area( const char* pzName, void** ppAddress, size_t nSize,
-		     flags_t nProtection, flags_t nLockMode );
-#endif
 
 __SYSCALL( status_t, delete_area( area_id hArea ) );
 __SYSCALL( status_t, remap_area( area_id nArea, void* pPhysAddress ) );
@@ -157,4 +134,4 @@ status_t strndup_from_user( const char* pzSrc, size_t nMaxLen, char** ppzDst );
 }
 #endif
 
-#endif /* __ATHEOS_AREA_H__ */
+#endif	/* __F_ATHEOS_AREA_H__ */
