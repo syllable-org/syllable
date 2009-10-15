@@ -24,7 +24,7 @@
 #include <kernel/semaphore.h>
 #include <kernel/config.h>
 #include <kernel/kdebug.h>
-#include <syllable/image.h>
+#include <kernel/image.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/stat.h>

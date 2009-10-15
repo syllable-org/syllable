@@ -18,13 +18,13 @@
  */
 
 #include <kernel/types.h>
+#include <kernel/elf.h>
 #include <kernel/semaphore.h>
 #include <kernel/device.h>
+#include <kernel/smp.h>
 #include <kernel/ctype.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
-#include <syllable/elf.h>
 #include <posix/fcntl.h>
 #include <posix/errno.h>
 #include <posix/limits.h>

@@ -21,9 +21,9 @@
 #include <kernel/types.h>
 #include <kernel/irq.h>
 #include <kernel/isa_io.h>
+#include <kernel/smp.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
 #include <posix/errno.h>
 #include <macros.h>
 

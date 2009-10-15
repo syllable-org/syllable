@@ -20,9 +20,9 @@
 #include <kernel/types.h>
 #include <kernel/time.h>
 #include <kernel/semaphore.h>
+#include <kernel/smp.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
 #include <posix/errno.h>
 #include <posix/fcntl.h>
 #include <posix/unistd.h>

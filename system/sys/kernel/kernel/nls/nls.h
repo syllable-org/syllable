@@ -1,11 +1,11 @@
-#include <atheos/types.h>
-#include <atheos/kernel.h>
-#include <atheos/smp.h>
-#include <atheos/kdebug.h>
-#include <posix/errno.h>
+#include <kernel/smp.h>
+#include <kernel/types.h>
+#include <kernel/kdebug.h>
 #include <kernel/list.h>
 #include <kernel/nls.h>
 #include <kernel/atomic.h>
+#include <syllable/kernel.h>
+#include <posix/errno.h>
 #include <macros.h>
 
 typedef struct {

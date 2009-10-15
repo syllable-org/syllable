@@ -13,8 +13,8 @@
  */
 
 #include <kernel/types.h>
-#include <syllable/udelay.h>
-#include <syllable/smp.h>
+#include <kernel/smp.h>
+#include <kernel/udelay.h>
 
 #include <inc/smp.h>
 #include <inc/pit_timer.h>

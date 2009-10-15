@@ -25,10 +25,10 @@
 #include <kernel/ctype.h>
 #include <kernel/semaphore.h>
 #include <kernel/device.h>
+#include <kernel/smp.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <syllable/syscall.h>
-#include <syllable/smp.h>
 #include <posix/fcntl.h>
 #include <posix/resource.h>
 #include <posix/wait.h>
@@ -316,8 +316,7 @@ int get_kernel_arguments( int *argc, const char *const **argv )
 #define __ENABLE_DEBUG__
 #endif
 
-#include <atheos/kdebug.h>
-#include <atheos/udelay.h>
+#include <kernel/udelay.h>
 
 #undef DEBUG_LIMIT
 #define DEBUG_LIMIT   KERN_DEBUG_LOW

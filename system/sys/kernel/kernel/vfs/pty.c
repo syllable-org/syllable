@@ -23,10 +23,10 @@
 #include <kernel/semaphore.h>
 #include <kernel/schedule.h>
 #include <kernel/irq.h>
+#include <kernel/smp.h>
 #include <kernel/ctype.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
 #include <posix/errno.h>
 #include <posix/termios.h>
 #include <posix/stat.h>

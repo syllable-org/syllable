@@ -21,6 +21,7 @@
 #define __AREAS_H__
 
 #include <kernel/types.h>
+#include <kernel/areas.h>
 #include <kernel/semaphore.h>
 
 #include <vfs/vfs.h>

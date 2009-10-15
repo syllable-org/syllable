@@ -21,6 +21,7 @@
 #define	__F_SCHEDULER_H__
 
 #include <kernel/types.h>
+#include <kernel/areas.h>
 #include <kernel/tld.h>
 #include <kernel/filesystem.h>
 #include <kernel/strace.h>

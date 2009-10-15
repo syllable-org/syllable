@@ -22,9 +22,9 @@
 #include <kernel/irq.h>
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
+#include <kernel/elf.h>
+#include <kernel/smp.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
-#include <syllable/elf.h>
 #include <syllable/syscall.h>
 #include <posix/fcntl.h>
 #include <posix/errno.h>

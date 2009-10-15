@@ -22,9 +22,9 @@
 #include <kernel/types.h>
 #include <kernel/irq.h>
 #include <kernel/spinlock.h>
+#include <kernel/udelay.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/udelay.h>
 
 #include <inc/scheduler.h>
 #include <inc/sysbase.h>

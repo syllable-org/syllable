@@ -29,8 +29,8 @@
 #include <kernel/isa_io.h>
 #include <kernel/irq.h>
 #include <kernel/seqlock.h>
+#include <kernel/smp.h>
 #include <kernel/kdebug.h>
-#include <syllable/smp.h>
 #include <syllable/kernel.h>
 #include <macros.h>
 

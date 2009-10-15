@@ -22,8 +22,8 @@
 #include <kernel/semaphore.h>
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
+#include <kernel/smp.h>
 #include <syllable/kernel.h>
-#include <syllable/smp.h>
 #include <posix/errno.h>
 #include <posix/fcntl.h>
 #include <posix/unistd.h>

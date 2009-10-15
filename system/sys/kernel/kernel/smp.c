@@ -23,8 +23,9 @@
 #include <kernel/time.h>
 #include <kernel/spinlock.h>
 #include <kernel/irq.h>
+#include <kernel/udelay.h>
 #include <syllable/kernel.h>
-#include <syllable/udelay.h>
+#include <posix/errno.h>
 
 #include <inc/smp.h>
 #include <inc/pit_timer.h>

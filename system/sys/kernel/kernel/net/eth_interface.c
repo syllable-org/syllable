@@ -20,8 +20,8 @@
 #include <kernel/types.h>
 #include <kernel/kdebug.h>
 #include <kernel/threads.h>
+#include <kernel/elf.h>
 #include <syllable/kernel.h>
-#include <syllable/elf.h>
 #include <posix/ioctl.h>
 #include <net/net.h>
 #include <net/if.h>

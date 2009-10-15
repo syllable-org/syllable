@@ -20,10 +20,10 @@
 #include <kernel/types.h>
 #include <kernel/device.h>
 #include <kernel/semaphore.h>
+#include <kernel/image.h>
+#include <kernel/udelay.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <syllable/image.h>
-#include <syllable/udelay.h>
 #include <posix/limits.h>
 #include <posix/errno.h>
 #include <macros.h>

@@ -40,8 +40,8 @@
 #include <kernel/resource.h>
 #include <kernel/bcache.h>
 #include <kernel/areas.h>
+#include <kernel/udelay.h>
 #include <kernel/kdebug.h>
-#include <syllable/udelay.h>
 #include <syllable/kernel.h>
 #include <posix/ioctl.h>
 #include <posix/fcntl.h>

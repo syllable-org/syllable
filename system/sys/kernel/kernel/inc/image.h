@@ -21,10 +21,10 @@
 #define __F_ELF_H__
 
 #include <kernel/types.h>
+#include <kernel/elf.h>
 #include <kernel/filesystem.h>
 #include <kernel/bootmodules.h>
-#include <syllable/elf.h>
-#include <syllable/image.h>
+#include <kernel/image.h>
 
 #include <inc/typedefs.h>
 #include <vfs/vfs.h>

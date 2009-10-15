@@ -25,7 +25,7 @@
 #include <kernel/socket.h>
 #include <kernel/semaphore.h>
 #include <kernel/kdebug.h>
-#include <syllable/image.h>
+#include <kernel/image.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <net/net.h>
