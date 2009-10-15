@@ -19,6 +19,7 @@
 
 #ifndef	__F_ATHEOS_SEMAPHORES_H__
 #define	__F_ATHEOS_SEMAPHORES_H__
+
 #include <atheos/types.h>
 
 #ifdef __cplusplus
@@ -27,23 +28,22 @@ extern "C" {
 
 typedef struct
 {
-    sem_id 	si_sema_id;
-    proc_id 	si_owner;
-    int32	si_count;
+    sem_id		si_sema_id;
+    proc_id		si_owner;
+    int32		si_count;
     thread_id 	si_latest_holder;
-    char	si_name[OS_NAME_LENGTH];
+    char		si_name[OS_NAME_LENGTH];
 } sem_info;
 
-
-
-#define	SEM_RECURSIVE       0x0001	/* Allow same thread to lock semaphore multiple times	*/
-#define SEM_WARN_DBL_LOCK   0x0002	/* Warn if a thread takes the semaphore twice		*/
-#define SEM_WARN_DBL_UNLOCK 0x0004	/* Warn if the count gets higher than 1			*/
-#define SEM_GLOBAL          0x0008	/* Alloc the semaphore in the global namespace		*/
+#define SEM_RECURSIVE       0x0001	/* Allow same thread to lock semaphore multiple times */
+#define SEM_WARN_DBL_LOCK   0x0002	/* Warn if a thread takes the semaphore twice */
+#define SEM_WARN_DBL_UNLOCK 0x0004	/* Warn if the count gets higher than 1 */
+#define SEM_GLOBAL          0x0008	/* Alloc the semaphore in the global namespace */
 
 #define SEM_STYLE_MASK      0x00f0
 #define SEMSTYLE_COUNTING   0x0000  /* Ordinary counting semaphore */
 #define SEMSTYLE_RWLOCK     0x0010  /* Reader-writer lock */
+
 #define SEM_STYLE( sem )		( (sem) & SEM_STYLE_MASK )
 
 sem_id		create_semaphore( const char* pzName, int nCount, uint32 nFlags );

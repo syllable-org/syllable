@@ -89,7 +89,6 @@ typedef uint32 elf_greg_t;
 #define ELF_NGREG (sizeof(struct user_regs_struct) / sizeof(elf_greg_t))
 typedef elf_greg_t elf_gregset_t[ELF_NGREG];
 
-
 struct user {
 	struct user_regs_struct regs;
 	uint32 u_debugreg[8];

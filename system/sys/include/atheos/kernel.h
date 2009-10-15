@@ -20,9 +20,9 @@
 #ifndef __ATHEOS_KERNEL_H__
 #define __ATHEOS_KERNEL_H__
 
-#include <atheos/kdebug.h>
-#include <atheos/v86.h>
-#include <atheos/areas.h>
+#include <kernel/v86.h>
+#include <kernel/kdebug.h>
+#include <kernel/areas.h>
 #include <kernel/stdlib.h>
 #include <kernel/schedule.h>
 #include <kernel/isa_io.h>

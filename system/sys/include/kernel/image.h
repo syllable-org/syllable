@@ -25,4 +25,9 @@
 
 int get_image_info( bool bKernel, int nImage, int nSubImage, image_info* psInfo );
 
+int get_symbol_by_address( int nLibrary, const char* pAddress, char* pzName, int nMaxNamLen, void** ppAddress );
+
+int load_kernel_driver( const char* pzPath );
+int unload_kernel_driver( int nLibrary );
+
 #endif	/* __F_KERNEL_IMAGE_H__ */

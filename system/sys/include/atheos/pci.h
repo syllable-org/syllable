@@ -23,22 +23,47 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#if 0
-}
-#endif
 
-#include <atheos/pci_vendors.h>
-#include <atheos/device.h>
+#include <atheos/types.h>
+
+typedef struct
+{
+	int		nBus;
+	int		nDevice;
+	int		nFunction;
+	
+	uint16	nVendorID;
+	uint16	nDeviceID;
+	uint8	nRevisionID;
+	uint8 	nClassApi;
+	uint8	nClassBase;
+	uint8	nClassSub;
+	uint8	nCacheLineSize;
+	uint8	nHeaderType;
+
+	union
+	{
+		struct
+		{
+			uint32	nBase0;
+			uint32	nBase1;
+			uint32	nBase2;
+			uint32	nBase3;
+			uint32	nBase4;
+			uint32	nBase5;
+			uint8	nInterruptLine;
+			uint8	nInterruptPin;
+			uint8	nMinDMATime;
+			uint8	nMaxDMALatency;
+		} h0;
+	} u;
+	int		nHandle;
+} PCI_Info_s;
 
 status_t get_pci_info( PCI_Info_s* psInfo, int nIndex );
 
-uint32 	 read_pci_config( int nBusNum, int nDevNum, int nFncNum, int nOffset, int nSize );
+uint32 read_pci_config( int nBusNum, int nDevNum, int nFncNum, int nOffset, int nSize );
 status_t write_pci_config( int nBusNum, int nDevNum, int nFncNum, int nOffset, int nSize, uint32 nValue );
-
-status_t raw_read_pci_config( int nBusNum, int nDevFnc, int nOffset, int nSize, uint32 *pnRes );
-status_t raw_write_pci_config( int nBusNum, int nDevFnc, int nOffset, int nSize, uint32 nValue );
-
-int read_pci_header( PCI_Entry_s * psInfo, int nBusNum, int nDevNum, int nFncNum );
 
 #ifdef __cplusplus
 }

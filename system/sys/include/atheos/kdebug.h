@@ -20,34 +20,18 @@
 #ifndef __F_ATHEOS_KDEBUG_H__
 #define __F_ATHEOS_KDEBUG_H__
 
-#include <atheos/types.h>
-#include <atheos/threads.h>
-
 #ifdef __cplusplus
 extern "C" {
-#if 0  
-} /*make emacs indention work */
-#endif
 #endif
 
-#define DB_PACKET_SIZE 128
-#define DB_PORT_COUNT  16
-
-#define DBP_PRINTK   0
-#define DBP_DEBUGGER 2
-
-typedef void dbg_fnc( int argc, char** argv );
-
-#ifndef __KERNEL__
-
-int debug_write( int nPort, const char* pBuffer, int nSize );
 int debug_read( int nPort, char* pBuffer, int nSize );
-int  dbprintf( const char* pzFmt, ... ) __attribute__ ((format (printf, 1, 2)));
+int debug_write( int nPort, const char* pBuffer, int nSize );
 
-#define CALLED()	dbprintf("CALLED %s\n", __PRETTY_FUNCTION__)
+int dbprintf( const char* pzFmt, ... ) __attribute__ ((format (printf, 1, 2)));
 
-#endif /* __KERNEL__ */
-
+#ifndef CALLED
+# define CALLED()	dbprintf("CALLED %s\n", __PRETTY_FUNCTION__)
+#endif
 
 #ifdef __cplusplus
 }

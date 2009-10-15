@@ -23,18 +23,16 @@
 #include <kernel/types.h>
 #include <syllable/msgport.h>
 
-port_id		sys_create_port( const char* const pzName, int nMaxCount );
-status_t	sys_delete_port( port_id hPort );
+port_id sys_create_port( const char* const pzName, int nMaxCount );
+status_t sys_delete_port( port_id hPort );
 
-status_t	send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, bigtime_t nTimeOut );
-status_t	get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, bigtime_t nTimeOut );
+status_t send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, bigtime_t nTimeOut );
+status_t get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, bigtime_t nTimeOut );
 
-status_t	sys_send_msg( port_id hPort, uint32 nCode, const void* pBuffer, int nSize );
-status_t	sys_get_msg( port_id hPort, uint32* pnCode, void* pBuffer, int nSize );
-status_t	sys_raw_send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer,
-				    int nSize, const bigtime_t* pnTimeOut );
-status_t	sys_raw_get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer,
-				   int nSize, const bigtime_t* pnTimeOut );
+status_t sys_send_msg( port_id hPort, uint32 nCode, const void* pBuffer, int nSize );
+status_t sys_get_msg( port_id hPort, uint32* pnCode, void* pBuffer, int nSize );
+status_t sys_raw_send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, const bigtime_t* pnTimeOut );
+status_t sys_raw_get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, const bigtime_t* pnTimeOut );
 
 status_t sys_make_port_public( port_id hPort );
 status_t sys_make_port_private( port_id hPort );

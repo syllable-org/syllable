@@ -23,11 +23,11 @@
 #include <kernel/types.h>
 #include <kernel/atomic.h>
 #include <kernel/irq.h>
-#include <syllable/smp.h>
+#include <kernel/smp.h>
 #include <macros.h>
 
 #ifdef __BUILD_KERNEL__
-#include "inc/smp.h"		// pick up inline get_processor_id() function
+#include <inc/smp.h>		/* pick up inline get_processor_id() function */
 #endif
 
 typedef struct

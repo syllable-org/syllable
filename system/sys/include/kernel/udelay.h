@@ -4,17 +4,10 @@
  * Modified to fit into the AtheOS kernel by Kurt Skauen 08 Jan 2000
  */
 
-#ifndef __F_ATHEOS_UDELAY_H__
-#define __F_ATHEOS_UDELAY_H__
+#ifndef __F_KERNEL_UDELAY_H__
+#define __F_KERNEL_UDELAY_H__
 
-#include <atheos/kernel.h>
-
-#ifdef __cplusplus
-extern "C" {
-#if 0  
-} /*make emacs indention work */
-#endif
-#endif
+//#include <atheos/kernel.h>
 
 extern void __udelay(unsigned long usecs);
 extern void __ndelay(unsigned long nsecs);
@@ -27,8 +20,4 @@ extern void __delay(unsigned long loops);
 #define ndelay(n) (__builtin_constant_p(n) ? \
 	(__const_udelay((n) * 5ul)) : __ndelay(n))
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif	/* __F_ATHEOS_UDELAY_H__ */
+#endif	/* __F_KERNEL_UDELAY_H__ */

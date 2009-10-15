@@ -31,7 +31,6 @@
 #include <posix/fcntl.h>
 #include <posix/uio.h>
 
-
 typedef struct _SelectRequest SelectRequest_s;
 
 struct _SelectRequest
@@ -52,18 +51,17 @@ enum
     SELECT_EXCEPT
 };
 
-
 #define WSTAT_MODE   0x0001
-#define	WSTAT_UID    0x0002
-#define	WSTAT_GID    0x0004
-#define	WSTAT_SIZE   0x0008
-#define	WSTAT_ATIME  0x0010
-#define	WSTAT_MTIME  0x0020
-#define	WSTAT_CTIME  0x0040
+#define WSTAT_UID    0x0002
+#define WSTAT_GID    0x0004
+#define WSTAT_SIZE   0x0008
+#define WSTAT_ATIME  0x0010
+#define WSTAT_MTIME  0x0020
+#define WSTAT_CTIME  0x0040
 
-#define	WFSSTAT_NAME 0x0001
+#define WFSSTAT_NAME 0x0001
 
-
+/* Filesystem hooks */
 typedef int op_probe( const char* pzDevPath, fs_info* psInfo );
 typedef int op_mount( kdev_t nDevNum, const char* pzDevPath,
 		      uint32 nFlags, const void* pArgs, int nArgLen, void** ppVolData, ino_t* pnRootIno );
@@ -221,20 +219,34 @@ typedef	struct
     op_truncate*	truncate;		// API version 2
 } FSOperations_s;
 
-
-  /* Current filesystem driver API version */
+/* Current filesystem driver API version */
 #define FSDRIVER_API_VERSION	2
 
-  /* Prototype for the fs-driver init function.
-   * The init function should be named fs_init() and should
-   * return FSDRIVER_API_VERSION if successfully initialized
-   * or a negative error code otherwhice
-   */
-
+/* Prototype for the fs-driver init function.
+ * The init function should be named fs_init() and should
+ * return FSDRIVER_API_VERSION if successfully initialized
+ * or a negative error code otherwhice
+ */
 int fs_init( const char* pzName, FSOperations_s** ppsOps );
 typedef int init_fs_func( const char* pzName, FSOperations_s** ppsOps );
 
+/* Kernel file functions */
+int	open( const char *pzName, int nFlags, ... );
+int	close( int nFileDesc );
+int pipe( int* pnFiles );
+ssize_t	read( int nFileDesc, void* pBuffer, size_t	nLength );
+int	dup( int nSrc );
+int	dup2( int nSrc, int nDst );
+int	symlink( const char* pzSrc, const char* pzDst );
+int	chdir( const char* pzPath );
+int	fchdir( int nFile );
+int freadlink( int nFile, char* pzBuffer, size_t nBufSize );
 
+typedef int iterate_dir_callback( const char* pzPath, struct stat* psStat, void* pArg );
+int iterate_directory( const char* pzDirectory, bool bIncludeDirs, iterate_dir_callback* pfCallback, void* pArg );
+int normalize_path( const char* pzPath, char** ppzResult );
+
+/* XXXKV: Stuff that probably shouldn't be here */
 int	set_inode_deleted_flag( int nDev, ino_t nInode, bool bIsDeleted );
 int	get_inode_deleted_flag( int nDev, ino_t nInode );
 int	flush_inode( int nDev, ino_t nInode );
@@ -243,22 +255,5 @@ status_t notify_node_monitors( int nEvent, dev_t nDevice, ino_t nOldDir, ino_t n
 
 int	get_vnode( int nDev, ino_t nInode, void** pNode );
 int	put_vnode( int nDev, ino_t nInode );
-
-
-
-int	open( const char *pzName, int nFlags, ... );
-int	close( int nFileDesc );
-int 	pipe( int* pnFiles );
-ssize_t	read( int nFileDesc, void* pBuffer, size_t	nLength );
-int	dup( int nSrc );
-int	dup2( int nSrc, int nDst );
-//int	mkdir( const char* pzPath, int nMode );
-int	symlink( const char* pzSrc, const char* pzDst );
-int	chdir( const char* pzPath );
-int	fchdir( int nFile );
-
-typedef int iterate_dir_callback( const char* pzPath, struct stat* psStat, void* pArg );
-int iterate_directory( const char* pzDirectory, bool bIncludeDirs, iterate_dir_callback* pfCallback, void* pArg );
-int normalize_path( const char* pzPath, char** ppzResult );
 
 #endif	/*	__F_KERNEL_FILESYSTEM_H__	*/

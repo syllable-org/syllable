@@ -4,9 +4,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#if 0
-}
-#endif
 
 /*
  * lp.h c.1991-1992 James Wiegand

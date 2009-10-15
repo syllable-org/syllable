@@ -32,17 +32,22 @@ enum
 bool is_root( bool bFromFS );
 bool is_in_group( gid_t grp );
 
-proc_id 	sys_get_next_proc( const proc_id hProc );
-proc_id		sys_get_prev_proc( const proc_id hProc );
+proc_id sys_get_next_proc( const proc_id hProc );
+proc_id sys_get_prev_proc( const proc_id hProc );
 
-thread_id	spawn_kernel_thread( const char* const pzName, void* const pfEntry,
-				     const int nPri, int nStackSize, void* const pData );
+thread_id	spawn_kernel_thread( const char* const pzName, void* const pfEntry, const int nPri, int nStackSize, void* const pData );
 
-proc_id	  sys_get_process_id( const char* pzName );
+/* Threads */
+proc_id sys_get_process_id( const char* pzName );
 thread_id sys_get_thread_id( const char* const pzName );
-status_t  sys_get_thread_info( const thread_id hThread, thread_info* const psInfo );
-status_t  sys_get_next_thread_info( thread_info* const psInfo );
-proc_id	  sys_get_thread_proc( const thread_id hThread );
-status_t  sys_rename_thread( thread_id hThread, const char* const pzName );
+status_t sys_get_thread_info( const thread_id hThread, thread_info* const psInfo );
+status_t sys_get_next_thread_info( thread_info* const psInfo );
+proc_id sys_get_thread_proc( const thread_id hThread );
+status_t sys_rename_thread( thread_id hThread, const char* const pzName );
+proc_id sys_get_thread_proc( const thread_id hThread );
+/*thread_id sys_get_next_thread( const thread_id hPrev );
+thread_id sys_get_prev_thread( const thread_id hPrev );*/
+status_t sys_rename_thread( thread_id hThread, const char* pzNewName );
+status_t sys_snooze( bigtime_t nTimeout );
 
 #endif	/* __F_KERNEL_THREADS_H__ */

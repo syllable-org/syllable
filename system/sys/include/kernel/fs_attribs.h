@@ -25,12 +25,35 @@
 #include <syllable/kernel.h>
 #include <posix/dirent.h>
 
+struct index_info
+{
+    int	   ii_type;		/* Data type */
+    off_t  ii_size;		/* Bytes used by index directory */
+    time_t ii_mtime;	/* Modification time */
+    time_t ii_ctime;	/* Creation time */
+    uid_t  ii_uid;		/* User id of index owner */
+    gid_t  ii_gid;		/* Group id of index owner */
+};
+
+/* Parameter block used internally for sys_read_attr() and sys_write_attr(). */
+typedef struct
+{
+    int		wa_nFile;
+    const char*	wa_pzName;
+    int		wa_nFlags;
+    int		wa_nType;
+    void*	wa_pBuffer;
+    off_t	wa_nPos;
+    size_t	wa_nLen;
+} WriteAttrParams_s;
+
+int write_attr( WriteAttrParams_s* psParams );
+int read_attr( WriteAttrParams_s* psParams );
+
+/* Kernel attributes API */
 int open_attrdir( int nFile );
 int close_attrdir( int nFile );
 int rewind_attrdir( int nFile );
 int read_attrdir( int nFile, struct kernel_dirent* psBuffer, int nCount );
-
-int write_attr( WriteAttrParams_s* psParams );
-int read_attr( WriteAttrParams_s* psParams );
 
 #endif /* __F_KERNEL_ATTRIBS_H__ */

@@ -17,18 +17,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_ATHEOS_SMP_H__
-#define __F_ATHEOS_SMP_H__
+#ifndef __F_KERNEL_SMP_H__
+#define __F_KERNEL_SMP_H__
 
-#include <atheos/types.h>
-
-#ifdef __cplusplus
-extern "C" {
-#if 0  
-} /*make emacs indention work */
-#endif
-#endif
-
+#include <kernel/types.h>
 
 #ifndef __BUILD_KERNEL__
 int get_processor_id(void);
@@ -50,10 +42,11 @@ typedef struct
 	bool bIsPresent;
 	bool bIsRunning;
 	bool bHaveFXSR; 		/* CPU has fast FPU save and restore */
-	bool bHaveXMM;		/* CPU has SSE extensions */
-	bool bHaveMTRR;		/* CPU has MTRRs */
+	bool bHaveXMM;			/* CPU has SSE extensions */
+	bool bHaveMTRR;			/* CPU has MTRRs */
 	uint32 nFeatures;
 } CPU_Extended_Info_v1_s;
+
 typedef CPU_Extended_Info_v1_s CPU_Extended_Info_s;	/*default to latest version */
 
 int get_active_cpu_count( void );
@@ -63,9 +56,4 @@ void update_cpu_speed(int nPhysicalCPUId, uint64 nCoreSpeed, uint32 nDelayCount 
 void set_idle_loop_handler( void ( *pHandler )( int ) );
 void set_cpu_time_handler( bigtime_t ( *pHandler )( int ) );
 
-#ifdef __cplusplus
-}
-#endif
-
-
-#endif /* __F_ATHEOS_SMP_H__ */
+#endif /* __F_KERNEL_SMP_H__ */

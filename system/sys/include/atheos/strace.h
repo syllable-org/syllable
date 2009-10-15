@@ -22,8 +22,6 @@
 #define __F_SYLLABLE_STRACE_H__
 
 #include <atheos/types.h>
-#include <atheos/syscall.h>
-#include <posix/errno.h>
 
 /* Syscall groups.  These are bitfield values used in tr_nSysTraceMask */
 #define SYSC_GROUP_NONE		0x00	/* Not used, apart from STRACE_DISABLED */
@@ -50,7 +48,8 @@
 #define STRACE_DISABLED		SYSC_GROUP_NONE	/* Syscall Tracing disabled */
 
 /* Codes to identify the argument types for each argument */
-enum sysc_arg_type{
+enum sysc_arg_type
+{
 	SYSC_ARG_T_INT = 1,		/* %d */
 	SYSC_ARG_T_LONG_INT,	/* %ld */
 	SYSC_ARG_T_HEX,			/* %x */

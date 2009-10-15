@@ -13,7 +13,7 @@
 
 #include <kernel/types.h>
 #if FIXED_486_STRING && (CPU == 486 || CPU == 586)
-#include <syllable/string-486.h>
+#include <kernel/string-486.h>
 #else
 
 /*

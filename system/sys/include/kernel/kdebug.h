@@ -21,25 +21,36 @@
 #define __F_KERNEL_KDEBUG_H__
 
 #include <kernel/types.h>
-#include <syllable/kdebug.h>
 
 void trace_stack( uint32 nEIP, uint32* pStack );
 
 int  sys_debug_write( int nPort, const char* pBuffer, int nSize );
 int  sys_debug_read( int nPort, char* pBuffer, int nSize );
 void debug_write( const char* pBuffer, int nSize );
-int  dbprintf( int nPort, const char* pzFmt, ... ) __attribute__ ((format (printf, 2, 3)));
-int  printk( const char* pzFmt, ... ) __attribute__ ((format (printf, 1, 2)));
+
+int dbprintf( int nPort, const char* pzFmt, ... ) __attribute__ ((format (printf, 2, 3)));
+int printk( const char* pzFmt, ... ) __attribute__ ((format (printf, 1, 2)));
+
 void panic( const char* pzFmt, ... ) __attribute__ ((format (printf, 1, 2)));
-void set_debug_port_params( int nBaudRate, int nPort, bool bPlainTextDebug );
+
+/* Interactive kernel debugger */
+typedef void dbg_fnc( int argc, char** argv );
+
 void init_debugger( int nBaudRate, int nSerialPort );
 void init_debugger_locks( void );
 int  register_debug_cmd( const char* pzName, const char* pzDesc, dbg_fnc* pFunc );
+
+#define DB_PACKET_SIZE 128
+#define DB_PORT_COUNT  16
+
+#define DBP_PRINTK   0
+#define DBP_DEBUGGER 2
 
 void dbcon_write( const char* pData, int nSize );
 void dbcon_clear( void );
 void dbcon_set_color( int nColor, int nR, int nG, int nB );
 
+void set_debug_port_params( int nBaudRate, int nPort, bool bPlainTextDebug );
 
 enum debug_level{
 	KERN_DEBUG_LOW,

@@ -67,10 +67,98 @@ typedef struct
 
 #define BUILTIN_DEVICE_ID 1	// Device ID for devices built in to the kernel.
 
-void init_boot_device( const char* pzPath );
+#define MAX_BUSMANAGER_NAME_LENGTH 255
+#define MAX_DEVICE_NAME_LENGTH     255
 
+enum device_type {
+	DEVICE_UNKNOWN,
+	DEVICE_SYSTEM,
+	DEVICE_CONTROLLER,
+	DEVICE_VIDEO,
+	DEVICE_AUDIO,
+	DEVICE_NET,
+	DEVICE_PORT,
+	DEVICE_INPUT,
+	DEVICE_DRIVE,
+	DEVICE_PROCESSOR,
+	DEVICE_STORAGE,
+	DEVICE_DOCK,
+	DEVICE_CRYPTO,
+	DEVICE_DASP
+};
+
+/* General device information */
+typedef struct
+{
+	int              di_nHandle;	
+	char             di_zOriginalName[MAX_DEVICE_NAME_LENGTH];
+	char             di_zName[MAX_DEVICE_NAME_LENGTH];
+	char             di_zBus[MAX_BUSMANAGER_NAME_LENGTH];
+	enum device_type di_eType;
+} DeviceInfo_s;
+
+status_t	get_device_info( DeviceInfo_s* psInfo, int nIndex );
+
+/* Kernel functions */
+void		init_boot_device( const char* pzPath );
+void		init_devices_boot( void );
+void		init_devices( void );
+
+int			register_device( const char* pzName, const char* pzBus );
+void		unregister_device( int nHandle );
+status_t	claim_device( int nDeviceID, int nHandle, const char* pzName, enum device_type eType );
+void		release_device( int nHandle );
+void		release_devices( int nDeviceID );
+void		set_device_data( int nHandle, void* pData );
+void*		get_device_data( int nHandle );
+
+/* Busmanager functions */
+typedef void* busmanager_get_hooks( int nVersion );
+
+status_t	register_busmanager( int nDeviceID, const char* pzName, busmanager_get_hooks* pfHooks );
+void*		get_busmanager( const char* pzName, int nVersion );
+void 		set_device_as_busmanager( int nDeviceID );
+void		disable_device( int nDeviceID );
+void		disable_device_on_bus( int nDeviceID, const char* pzBus );
+void		enable_devices_on_bus( const char* pzBus );
+void		enable_all_devices( void );
+status_t	suspend_devices( void );
+status_t	resume_devices( void );
+
+/* Driver functions */
+status_t device_init( int nDeviceID );
+status_t device_uninit( int nDeviceID );
+void device_release( int nDeviceID, int nDeviceHandle, void* pPrivateData );
+status_t device_suspend( int nDeviceID, int nDeviceHandle, void* pPrivateData );
+status_t device_resume( int nDeviceID, int nDeviceHandle, void* pPrivateData );
+
+/* DevFS */
 int create_device_node( int nDeviceID, int nDeviceHandle, const char* pzPath, const DeviceOperations_s* psOps, void* pCookie );
 int delete_device_node( int nHandle );
 int rename_device_node( int nHandle, const char* pzNewPath );
+
+/* Block devices */
+typedef struct device_geometry
+{
+  uint64 sector_count;
+  uint64 cylinder_count;
+  uint32 sectors_per_track;
+  uint32 head_count;
+  uint32 bytes_per_sector;
+  bool	read_only;
+  bool	removable;
+} device_geometry;
+
+typedef struct
+{
+    off_t	p_nStart;	/* Offset in bytes */
+    off_t	p_nSize;	/* Size in bytes   */
+    int		p_nType;	/* Type as found in the partition table	*/
+    int		p_nStatus;	/* Status as found in partition table (bit 7=active) */
+} Partition_s;
+
+typedef size_t disk_read_op( void* pCookie, off_t nOffset, void* pBuffer, size_t nSize );
+
+int decode_disk_partitions( device_geometry* psDiskGeom, Partition_s* pasPartitions, int nMaxPartitions, void* pCookie, disk_read_op* pfReadCallback );
 
 #endif /* __F_KERNEL_DEVICE_H__ */

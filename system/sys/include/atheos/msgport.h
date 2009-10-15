@@ -41,23 +41,20 @@ typedef struct
 } port_info;
 
 
-port_id		create_port( const char* const pzName, int nMaxCount );
-status_t	delete_port( port_id hPort );
+port_id	 create_port( const char* const pzName, int nMaxCount );
+status_t delete_port( port_id hPort );
 
-status_t	get_port_info( port_id hPort, port_info* psInfo );
-status_t	get_next_port_info( port_info* psInfo );
+status_t get_port_info( port_id hPort, port_info* psInfo );
+status_t get_next_port_info( port_info* psInfo );
 
+status_t send_msg( port_id hPort, uint32 nCode, const void* pBuffer, int nSize );
+status_t get_msg( port_id hPort, uint32* pnCode, void* pBuffer, int nSize );
 
-status_t	send_msg( port_id hPort, uint32 nCode, const void* pBuffer, int nSize );
-status_t	get_msg( port_id hPort, uint32* pnCode, void* pBuffer, int nSize );
+status_t send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, bigtime_t nTimeOut );
+status_t get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, bigtime_t nTimeOut );
 
-status_t	send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, bigtime_t nTimeOut );
-status_t	get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, bigtime_t nTimeOut );
-
-status_t	raw_send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer,
-				int nSize, const bigtime_t* pnTimeOut );
-status_t	raw_get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer,
-			       int nSize, const bigtime_t* pnTimeOut );
+status_t raw_send_msg_x( port_id hPort, uint32 nCode, const void* pBuffer, int nSize, const bigtime_t* pnTimeOut );
+status_t raw_get_msg_x( port_id hPort, uint32* pnCode, void* pBuffer, int nSize, const bigtime_t* pnTimeOut );
 
 status_t make_port_public( port_id hPort );
 status_t make_port_private( port_id hPort );
