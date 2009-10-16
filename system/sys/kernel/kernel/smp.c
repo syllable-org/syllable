@@ -24,6 +24,7 @@
 #include <kernel/spinlock.h>
 #include <kernel/irq.h>
 #include <kernel/udelay.h>
+#include <kernel/tlb.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 

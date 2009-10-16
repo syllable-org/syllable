@@ -21,6 +21,7 @@
 #include <kernel/types.h>
 #include <kernel/spinlock.h>
 #include <kernel/bcache.h>
+#include <kernel/tlb.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>

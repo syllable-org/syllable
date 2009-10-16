@@ -26,6 +26,7 @@
 #include <kernel/time.h>
 #include <kernel/device.h>
 #include <kernel/resource.h>
+#include <kernel/sysinfo.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <syllable/syscall.h>

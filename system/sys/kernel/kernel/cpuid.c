@@ -23,6 +23,7 @@
 #include <kernel/irq.h>
 #include <kernel/spinlock.h>
 #include <kernel/udelay.h>
+#include <kernel/sysinfo.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 

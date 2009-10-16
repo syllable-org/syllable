@@ -47,6 +47,7 @@
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
 #include <kernel/mman.h>
+#include <kernel/tlb.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>

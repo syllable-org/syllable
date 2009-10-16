@@ -30,6 +30,7 @@
 #include <kernel/stat.h>
 #include <kernel/signal.h>
 #include <kernel/termios.h>
+#include <kernel/pgroups.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>

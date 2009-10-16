@@ -41,6 +41,9 @@
 #include <kernel/bcache.h>
 #include <kernel/areas.h>
 #include <kernel/udelay.h>
+#include <kernel/tlb.h>
+#include <kernel/sysinfo.h>
+#include <kernel/pgroups.h>
 #include <kernel/fcntl.h>
 #include <kernel/ioctl.h>
 #include <kernel/kdebug.h>

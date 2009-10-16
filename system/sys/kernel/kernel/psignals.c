@@ -23,6 +23,7 @@
 #include <kernel/time.h>
 #include <kernel/strace.h>
 #include <kernel/spinlock.h>
+#include <kernel/pgroups.h>
 #include <syllable/kernel.h>
 #include <syllable/syscall.h>
 #include <syllable/sigcontext.h>

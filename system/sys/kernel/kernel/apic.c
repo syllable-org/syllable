@@ -21,6 +21,7 @@
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
 #include <kernel/irq.h>
+#include <kernel/sysinfo.h>
 #include <syllable/kernel.h>
 
 #include <inc/apic.h>
