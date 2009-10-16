@@ -21,9 +21,14 @@
 #define	__F_KERNEL_TYPES_H__
 
 #include <kernel/stdint.h>		/* Kernel C99 integer types */
+#include <kernel/tunables.h>
+
+#include <syllable/inttypes.h>
+#include <posix/types.h>
+
+#include <stddef.h>
+#include <stdbool.h>
 
 typedef void (*sighandler_t)(int);
-
-#include <syllable/types.h>
 
 #endif	/* __F_KERNEL_TYPES_H__ */
