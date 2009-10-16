@@ -17,18 +17,16 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef __F_KERNEL_FCNTL_H__
+#define __F_KERNEL_FCNTL_H__
 
-#include <posix/types.h>
+#include <kernel/types.h>
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
+int	open(const char *_path, int _oflag, ...);
+int	close( int nFile );
+int	creat(const char *_path, mode_t _mode);
+int	fcntl(int _fildes, int _cmd, ...);
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
+#include <posix/fcntl.h>
 
-#endif	/* __F_POSIX_UIO_H__ */
+#endif	/* __F_KERNEL_FCNTL_H__ */

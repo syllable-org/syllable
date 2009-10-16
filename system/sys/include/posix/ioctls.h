@@ -1,5 +1,5 @@
-#ifndef __ARCH_I386_IOCTLS_H__
-#define __ARCH_I386_IOCTLS_H__
+#ifndef __F_POSIX_IOCTLS_H__
+#define __F_POSIX_IOCTLS_H__
 
 #include <posix/ioctl.h>
 
@@ -71,4 +71,4 @@
 
 #define TIOCSER_TEMT    0x01	/* Transmitter physically empty */
 
-#endif
+#endif	/* __F_POSIX_IOCTLS_H__ */

@@ -1,6 +1,6 @@
 /*
- *  The AtheOS kernel
- *  Copyright (C) 1999 - 2001 Kurt Skauen
+ *  The Syllable kernel
+ *  Copyright (C) 2009 The Syllable Team
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of version 2 of the GNU Library
@@ -17,18 +17,19 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef __F_KERNEL_MMAN_H__
+#define __F_KERNEL_MMAN_H__
+
+#define __USE_MISC
+#include <posix/mman.h>
+#undef __USE_MISC
 
 #include <posix/types.h>
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
+#define MAP_FAILED	-1
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
+void* sys_mmap( void *pAddr, size_t nLen, int nFlags, int nFile, off_t nOffset );
+int sys_munmap( void *pAddr, size_t nLen );
+int sys_mprotect( void *pAddr, size_t nLen, int nProt );
 
-#endif	/* __F_POSIX_UIO_H__ */
+#endif	/* __F_KERNEL_MMAN_H__ */

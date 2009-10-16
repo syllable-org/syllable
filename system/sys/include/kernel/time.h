@@ -22,7 +22,29 @@
 
 #include <kernel/types.h>
 #include <syllable/time.h>
+#include <posix/time.h>
 
+/* POSIX timers */
+#define ITIMER_REAL		0
+#define ITIMER_VIRTUAL	1
+#define ITIMER_PROF		2
+
+struct tm
+{
+	int 	tm_sec;
+	int 	tm_min;
+	int 	tm_hour;
+	int 	tm_mday;
+	int 	tm_mon;
+	int 	tm_year;
+	int 	tm_wday;
+	int 	tm_yday;
+	int 	tm_isdst;
+	char*	tm_zone;
+	int 	tm_gmtoff;
+};
+
+/* Realtime clock stuff */
 typedef struct
 {
 	int		tm_sec;         /* seconds after the minute [0-60] */
@@ -35,7 +57,7 @@ typedef struct
 	int		tm_yday;        /* days since January 1 [0-365] */
 	int		tm_isdst;       /* Daylight Savings Time flag */
 	long	tm_gmtoff;      /* offset from CUT in seconds */
-	char*	tm_zone;				/* timezone abbreviation */
+	char*	tm_zone;		/* timezone abbreviation */
 }	ClockTime_s;
 
 uint32	sys_GetTime( ClockTime_s*	psTime );

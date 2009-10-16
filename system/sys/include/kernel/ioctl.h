@@ -1,6 +1,7 @@
 /*
  *  The AtheOS kernel
  *  Copyright (C) 1999 - 2001 Kurt Skauen
+ *  Copyright (C) 2002, 2006 Kristian Van Der Vliet
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of version 2 of the GNU Library
@@ -17,18 +18,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef __F_KERNEL_IOCTL_H__
+#define __F_KERNEL_IOCTL_H__
 
-#include <posix/types.h>
+int ioctl( int fd, int cmd, ...);
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
+#include <posix/ioctl.h>
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
-
-#endif	/* __F_POSIX_UIO_H__ */
+#endif	/* __F_KERNEL_IOCTL_H__ */

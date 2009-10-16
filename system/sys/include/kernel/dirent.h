@@ -17,18 +17,12 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef __F_KERNEL_DIRENT_H_
+#define __F_KERNEL_DIRENT_H_
 
-#include <posix/types.h>
+#include <posix/dirent.h>
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
+int getdents( int nFile, struct kernel_dirent *psDirEnt, int nCount );
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
+#endif	/* __F_KERNEL_DIRENT_H_ */
 
-#endif	/* __F_POSIX_UIO_H__ */

@@ -21,14 +21,34 @@
 #define	__F_KERNEL_TYPES_H__
 
 #include <kernel/stdint.h>		/* Kernel C99 integer types */
+#include <syllable/inttypes.h>
+
 #include <kernel/tunables.h>
 
-#include <syllable/inttypes.h>
-#include <posix/types.h>
-
 #include <stddef.h>
-#include <stdbool.h>
 
+#ifndef __cplusplus
+# include <stdbool.h>
+#endif
+
+/* Additional kernel-only types */
 typedef void (*sighandler_t)(int);
+
+#ifndef nlink_t
+typedef int nlink_t;
+#define nlink_t nlink_t
+#endif
+
+#ifndef ssize_t
+typedef int ssize_t;
+#define ssize_t ssize_t
+#endif
+
+#define MAXHOSTNAMELEN	64
+
+/* Declare both p() and kernel sys_p() prototypes. */
+#define __SYSCALL(r,p)	r p;	r sys_ ## p;
+
+#include <posix/types.h>
 
 #endif	/* __F_KERNEL_TYPES_H__ */

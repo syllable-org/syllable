@@ -17,18 +17,13 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef __F_KERNEL_UIO_H__
+#define __F_KERNEL_UIO_H__
 
-#include <posix/types.h>
+#include <kernel/types.h>
+#include <posix/uio.h>
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
+ssize_t	readv( int nFile, const struct iovec* psVector, int nCount );
+ssize_t	writev( int nFile, const struct iovec* psVector, int nCount );
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
-
-#endif	/* __F_POSIX_UIO_H__ */
+#endif	/* __F_KERNEL_UIO_H__ */

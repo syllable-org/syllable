@@ -20,15 +20,16 @@
 #ifndef	__F_ATHEOS_TYPES_H__
 #define	__F_ATHEOS_TYPES_H__
 
-#include <stddef.h>
 #include <stdint.h>
 #include <inttypes.h>
+
+#include <stddef.h>
+
+#include <posix/types.h>
 
 #ifndef __cplusplus
 # include <stdbool.h>
 #endif
-
-#include <posix/types.h>
 
 #include <syllable/pthreadtypes.h>
 

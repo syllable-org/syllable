@@ -1,6 +1,6 @@
 /*
- *  The AtheOS kernel
- *  Copyright (C) 1999 - 2001 Kurt Skauen
+ *  The Syllable kernel
+ *  Copyright (C) 2009 Kristian Van Der Vliet
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of version 2 of the GNU Library
@@ -17,18 +17,17 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_POSIX_UIO_H__
-#define __F_POSIX_UIO_H__
+#ifndef	__F_KERNEL_SIGINFO_H_
+#define	__F_KERNEL_SIGINFO_H_
 
-#include <posix/types.h>
+/* Type for data associated with a signal.  */
+typedef union sigval
+  {
+    int sival_int;
+    void *sival_ptr;
+  } sigval_t;
 
-struct iovec
-{
-  void*	 iov_base;
-  size_t iov_len;
-};
 
-#define UIO_FASTIOV	8
-#define UIO_MAXIOV	1024
+#include <posix/siginfo.h>
 
-#endif	/* __F_POSIX_UIO_H__ */
+#endif	/* __F_KERNEL_SIGINFO_H_ */

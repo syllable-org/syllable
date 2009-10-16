@@ -1,7 +1,5 @@
-#ifndef __ARCH_I386_TERMBITS_H__
-#define __ARCH_I386_TERMBITS_H__
-
-#include <posix/types.h>
+#ifndef __F_POSIX_TERMBITS_H__
+#define __F_POSIX_TERMBITS_H__
 
 typedef unsigned char	cc_t;
 typedef unsigned int	speed_t;
@@ -157,4 +155,4 @@ struct termios {
 #define	TCSADRAIN	1
 #define	TCSAFLUSH	2
 
-#endif
+#endif	/* __F_POSIX_TERMBITS_H__ */
