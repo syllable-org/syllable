@@ -8,7 +8,7 @@
 
 #include <kernel/types.h>
 #include <kernel/semaphore.h>
-#include <kernel/resource.h>
+#include <kernel/resources.h>
 #include <kernel/spinlock.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>

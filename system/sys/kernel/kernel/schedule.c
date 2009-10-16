@@ -19,11 +19,11 @@
 
 #include <kernel/time.h>
 #include <kernel/spinlock.h>
+#include <kernel/resource.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/wait.h>
-#include <posix/resource.h>
 #include <macros.h>
 
 #include <inc/scheduler.h>

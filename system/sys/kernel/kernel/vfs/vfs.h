@@ -25,11 +25,10 @@
 #include <kernel/filesystem.h>
 #include <kernel/atomic.h>
 #include <kernel/threads.h>
-#include <posix/types.h>
-#include <posix/stat.h>
-#include <posix/dirent.h>
-#include <posix/fcntl.h>
-#include <posix/uio.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
+#include <kernel/stat.h>
+#include <kernel/uio.h>
 
 #include <inc/typedefs.h>
 

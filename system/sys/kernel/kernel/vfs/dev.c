@@ -23,13 +23,13 @@
 #include <kernel/device.h>
 #include <kernel/semaphore.h>
 #include <kernel/config.h>
-#include <kernel/kdebug.h>
 #include <kernel/image.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
+#include <kernel/stat.h>
+#include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/stat.h>
-#include <posix/fcntl.h>
-#include <posix/dirent.h>
 #include <macros.h>
 
 #include <vfs/vfs.h>

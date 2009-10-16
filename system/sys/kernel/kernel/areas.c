@@ -46,10 +46,10 @@
 #include <kernel/spinlock.h>
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
+#include <kernel/mman.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
-#include <posix/mman.h>
 
 #include <macros.h>
 

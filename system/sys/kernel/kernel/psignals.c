@@ -28,7 +28,6 @@
 #include <syllable/sigcontext.h>
 #include <posix/errno.h>
 #include <posix/wait.h>
-#include <posix/time.h>
 #include <macros.h>
 
 #include <inc/scheduler.h>

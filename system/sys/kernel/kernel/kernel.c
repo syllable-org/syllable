@@ -25,10 +25,10 @@
 #include <kernel/bcache.h>
 #include <kernel/time.h>
 #include <kernel/device.h>
+#include <kernel/resource.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <syllable/syscall.h>
-#include <posix/resource.h>
 #include <posix/errno.h>
 #include <macros.h>
 

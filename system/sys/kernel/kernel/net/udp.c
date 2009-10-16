@@ -19,10 +19,10 @@
 
 #include <kernel/socket.h>
 #include <kernel/semaphore.h>
+#include <kernel/uio.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/uio.h>
 #include <posix/ioctls.h>
 #include <net/net.h>
 #include <net/in.h>

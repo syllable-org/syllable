@@ -20,7 +20,7 @@
 #ifndef __F_AIO_H__
 #define __F_AIO_H__
 
-#include <posix/aio.h>
+#include <kernel/aio.h>
 #include <macros.h>
 
 #include <inc/typedefs.h>

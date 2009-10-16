@@ -37,14 +37,14 @@
 #include <kernel/timer.h>
 #include <kernel/random.h>
 #include <kernel/nls.h>
-#include <kernel/resource.h>
+#include <kernel/resources.h>
 #include <kernel/bcache.h>
 #include <kernel/areas.h>
 #include <kernel/udelay.h>
+#include <kernel/fcntl.h>
+#include <kernel/ioctl.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
-#include <posix/ioctl.h>
-#include <posix/fcntl.h>
 #include <posix/unistd.h>
 #include <posix/signal.h>
 #include <net/net.h>

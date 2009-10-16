@@ -25,14 +25,15 @@
 #include <kernel/irq.h>
 #include <kernel/smp.h>
 #include <kernel/ctype.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
+#include <kernel/stat.h>
+#include <kernel/signal.h>
+#include <kernel/termios.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/termios.h>
-#include <posix/stat.h>
-#include <posix/fcntl.h>
-#include <posix/dirent.h>
-#include <posix/signal.h>
+#include <posix/ioctls.h>
 #include <macros.h>
 
 #include <inc/scheduler.h>

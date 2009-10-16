@@ -21,14 +21,13 @@
 #include <kernel/time.h>
 #include <kernel/semaphore.h>
 #include <kernel/smp.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/fcntl.h>
 #include <posix/unistd.h>
-#include <posix/dirent.h>
 #include <posix/utime.h>
-#include <posix/time.h>
 #include <macros.h>
 
 #include <vfs/vfs.h>

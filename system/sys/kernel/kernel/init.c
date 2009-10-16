@@ -18,7 +18,7 @@
  */
 
 #include <kernel/config.h>
-#include <kernel/resource.h>
+#include <kernel/resources.h>
 #include <kernel/multiboot.h>
 #include <kernel/irq.h>
 #include <kernel/bcache.h>
@@ -26,16 +26,16 @@
 #include <kernel/semaphore.h>
 #include <kernel/device.h>
 #include <kernel/smp.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
+#include <kernel/stat.h>
+#include <kernel/resource.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <syllable/syscall.h>
-#include <posix/fcntl.h>
-#include <posix/resource.h>
 #include <posix/wait.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
-#include <posix/dirent.h>
-#include <posix/stat.h>
 #include <net/net.h>
 #include <macros.h>
 

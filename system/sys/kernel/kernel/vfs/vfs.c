@@ -23,16 +23,15 @@
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
 #include <kernel/smp.h>
+#include <kernel/dirent.h>
+#include <kernel/fcntl.h>
+#include <kernel/mman.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/fcntl.h>
 #include <posix/unistd.h>
-#include <posix/dirent.h>
 #include <posix/utime.h>
-#include <posix/time.h>
 #include <posix/limits.h>
 #include <posix/select.h>
-#include <posix/mman.h>
 #include <macros.h>
 
 #include <vfs/vfs.h>

@@ -25,9 +25,9 @@
 #include <kernel/tld.h>
 #include <kernel/filesystem.h>
 #include <kernel/strace.h>
-#include <posix/param.h>
-#include <posix/signal.h>
+#include <kernel/signal.h>
 #include <kernel/dlist.h>
+#include <posix/param.h>
 
 #include <inc/typedefs.h>
 #include <inc/semaphore.h>

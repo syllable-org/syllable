@@ -21,13 +21,13 @@
 #include <kernel/semaphore.h>
 #include <kernel/filesystem.h>
 #include <kernel/atomic.h>
+#include <kernel/fcntl.h>
+#include <kernel/signal.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/limits.h>
-#include <posix/fcntl.h>
 #include <posix/ioctls.h>
-#include <posix/signal.h>
 #include <macros.h>
 
 #include <vfs/vfs.h>

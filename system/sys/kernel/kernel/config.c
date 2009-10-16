@@ -24,10 +24,10 @@
 #include <kernel/device.h>
 #include <kernel/config.h>
 #include <kernel/ctype.h>
+#include <kernel/fcntl.h>
 #include <kernel/kdebug.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
-#include <posix/fcntl.h>
 #include <macros.h>
 
 #include <inc/sysbase.h>

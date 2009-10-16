@@ -21,13 +21,13 @@
 #include <kernel/time.h>
 #include <kernel/semaphore.h>
 #include <kernel/bcache.h>
-#include <kernel/kdebug.h>
 #include <kernel/areas.h>
+#include <kernel/fcntl.h>
+#include <kernel/stat.h>
+#include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/fcntl.h>
 #include <posix/unistd.h>
-#include <posix/stat.h>
 #include <macros.h>
 
 #include <inc/scheduler.h>

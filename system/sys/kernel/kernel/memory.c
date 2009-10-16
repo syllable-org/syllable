@@ -23,7 +23,7 @@
 
 #include <kernel/types.h>
 #include <kernel/spinlock.h>
-#include <kernel/resource.h>
+#include <kernel/resources.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>

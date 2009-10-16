@@ -21,16 +21,16 @@
 #include <kernel/kdebug.h>
 #include <kernel/threads.h>
 #include <kernel/elf.h>
+#include <kernel/dirent.h>
+#include <kernel/ioctl.h>
 #include <syllable/kernel.h>
-#include <posix/ioctl.h>
+#include <posix/errno.h>
 #include <net/net.h>
 #include <net/if.h>
 #include <net/if_ether.h>
 #include <net/sockios.h>
 #include <net/route.h>
 #include <net/ip.h>
-#include <posix/dirent.h>
-#include <posix/errno.h>
 #include <macros.h>
 
 /* Selective debugging level overrides */

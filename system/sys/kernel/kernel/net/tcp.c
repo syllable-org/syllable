@@ -21,13 +21,13 @@
 #include <kernel/time.h>
 #include <kernel/socket.h>
 #include <kernel/semaphore.h>
+#include <kernel/fcntl.h>
+#include <kernel/signal.h>
+#include <kernel/uio.h>
 #include <kernel/kdebug.h>
 #include <syllable/kernel.h>
 #include <posix/errno.h>
-#include <posix/uio.h>
-#include <posix/fcntl.h>
 #include <posix/ioctls.h>
-#include <posix/signal.h>
 #include <net/net.h>
 #include <net/in.h>
 #include <net/ip.h>
