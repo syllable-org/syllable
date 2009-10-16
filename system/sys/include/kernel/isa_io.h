@@ -39,8 +39,6 @@
 #define XQUAD_PORTIO_BASE 0xfe400000
 #define XQUAD_PORTIO_QUAD 0x40000  /* 256k per quad. */
 
-#ifdef __KERNEL__
-
 /*
  * readX/writeX() are used to access memory mapped devices. On some
  * architectures the memory mapped IO stuff needs to be accessed
@@ -68,8 +66,6 @@
 #define memset_io(a,b,c)	memset((void *)(a),(b),(c))
 #define memcpy_fromio(a,b,c)	__memcpy((a),(void *)(b),(c))
 #define memcpy_toio(a,b,c)	__memcpy((void *)(a),(b),(c))
-
-#endif /* __KERNEL__ */
 
 #ifdef SLOW_IO_BY_JUMPING
 #define __SLOW_DOWN_IO "jmp 1f; 1: jmp 1f; 1:"
