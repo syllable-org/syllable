@@ -124,7 +124,9 @@ typedef struct
    get_system_info() is likely to cause segfaults on binaries compiled on recent Syllable versions.
    Use get_system_info_v() instead, or the get_system_info() macro.
 */
+#ifndef __KERNEL__
 status_t get_system_info( system_info* psInfo );
+#endif
 
 status_t get_system_info_v( system_info* psInfo, int nVersion );
 
