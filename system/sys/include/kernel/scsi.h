@@ -27,7 +27,6 @@
 #include <kernel/types.h>
 #include <kernel/semaphore.h>
 #include <kernel/atomic.h>
-#include <syllable/kernel.h>
 #include <syllable/cdrom.h>
 
 /*

@@ -129,4 +129,12 @@ BUILDIO(b,b,char)
 BUILDIO(w,w,short)
 BUILDIO(l,,int)
 
+/* These are for backwards compatability */
+static inline int	isa_readb( int nPort ) { return inb( nPort ); }
+static inline int   isa_readw( int nPort ) { return inw( nPort ); }
+static inline int   isa_readl( int nPort ) { return inl( nPort ); }
+static inline void  isa_writeb( int nPort, int nValue ) { outb( nValue, nPort ); }
+static inline void  isa_writew( int nPort, int nValue ) { outw( nValue, nPort ); }
+static inline void  isa_writel( int nPort, int nValue ) { outl( nValue, nPort ); }
+
 #endif	/* __KERNEL_ISA_IO_H_ */

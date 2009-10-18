@@ -17,34 +17,13 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_KERNEL_PGROUPS_H__
-#define __F_KERNEL_PGROUPS_H__
+#ifndef __F_KERNEL_ARGS_H__
+#define __F_KERNEL_ARGS_H__
 
 #include <kernel/types.h>
 
-int handle_signals( int dummy );
-int is_orphaned_pgrp( int nProcessGroup );
+bool get_str_arg( char* pzValue, const char* pzName, const char* pzArg, int nArgLen );
+bool get_num_arg( uint32* pnValue, const char* pzName, const char* pzArg, int nArgLen );
+bool get_bool_arg( bool* pnValue, const char* pzName, const char* pzArg, int nArgLen );
 
-int	sys_killpg( const pid_t nGrp, const int nSigNum );
-int	sys_kill_proc( proc_id hProcess, int nSigNum );
-
-int	killpg( pid_t nGrp, int nSigNum );
-int	kill_proc( proc_id hProcess, int nSigNum );
-
-int setpgid( pid_t a_hDest, pid_t a_hGroup );
-int getpgid( pid_t hPid );
-pid_t getpgrp(void);
-pid_t getppid(void);
-int getsid( pid_t hPid );
-int setsid(void);
-gid_t getegid(void);
-uid_t geteuid(void);
-gid_t getfsgid(void);
-uid_t getfsuid(void);
-gid_t getgid(void);
-int getgroups(int _size, gid_t *grouplist);
-uid_t getuid(void);
-int setgid(gid_t _gid);
-int setuid( uid_t uid );
-
-#endif	/* __F_KERNEL_PGROUPS_H__ */
+#endif	/* __F_KERNEL_ARGS_H__ */

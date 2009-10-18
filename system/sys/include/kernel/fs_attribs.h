@@ -22,7 +22,6 @@
 
 #include <kernel/types.h>
 #include <syllable/fs_attribs.h>
-#include <syllable/kernel.h>
 #include <posix/dirent.h>
 
 struct index_info

@@ -70,4 +70,6 @@ int	sys_get_raw_idle_time( bigtime_t* pRes, int nProcessor );
 uint32	ClockToSec( ClockTime_s* psTime );
 void	SecToClock( uint32 lSecs, ClockTime_s* psTime );
 
+status_t snooze( bigtime_t nTimeout );
+
 #endif /* __F_KERNEL_TIME_H_ */

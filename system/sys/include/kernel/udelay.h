@@ -7,8 +7,6 @@
 #ifndef __F_KERNEL_UDELAY_H__
 #define __F_KERNEL_UDELAY_H__
 
-//#include <atheos/kernel.h>
-
 extern void __udelay(unsigned long usecs);
 extern void __ndelay(unsigned long nsecs);
 extern void __const_udelay(unsigned long usecs);

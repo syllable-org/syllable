@@ -96,6 +96,8 @@ status_t resume_thread( const thread_id hThread );
 status_t suspend( void );
 status_t wakeup_thread( thread_id hThread, bool bWakeupSuspended );
 
+int	exit_thread( int nCode );
+
 int wait_for_thread( const thread_id hThread );
 
 int set_thread_priority( const thread_id hThread, const int nPriority );

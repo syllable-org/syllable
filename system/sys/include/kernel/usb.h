@@ -39,7 +39,6 @@
 #include <kernel/spinlock.h>
 #include <kernel/list.h>
 #include <kernel/usb_defs.h>
-#include <syllable/kernel.h>
 
 /* One USB packet */
 struct USB_device_t;

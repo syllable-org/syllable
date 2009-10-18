@@ -40,7 +40,6 @@ typedef struct
     char	pi_name[OS_NAME_LENGTH];
 } port_info;
 
-
 port_id	 create_port( const char* const pzName, int nMaxCount );
 status_t delete_port( port_id hPort );
 
@@ -62,6 +61,15 @@ status_t make_port_private( port_id hPort );
 port_id find_port( const char* pzPortname );
 
 size_t get_msg_size( port_id hPort );
+
+int set_app_server_port( port_id hPort );
+port_id get_app_server_port( void );
+
+/* Simple message which is sent to the app server when a thread dies */
+typedef	struct
+{
+    thread_id	hThread;
+} DR_ThreadDied_s;
 
 #ifdef __cplusplus
 }

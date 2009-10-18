@@ -49,5 +49,7 @@ proc_id sys_get_thread_proc( const thread_id hThread );
 thread_id sys_get_prev_thread( const thread_id hPrev );*/
 status_t sys_rename_thread( thread_id hThread, const char* pzNewName );
 status_t sys_snooze( bigtime_t nTimeout );
+int	sys_exit( int nCode );
+int	do_exit( int nCode );
 
 #endif	/* __F_KERNEL_THREADS_H__ */

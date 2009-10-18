@@ -22,7 +22,6 @@
 
 #include <skernel/types.h>
 #include <kernel/bitops.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <net/net.h>
 #include <macros.h>

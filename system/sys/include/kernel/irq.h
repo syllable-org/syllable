@@ -21,7 +21,7 @@
 #define __F_KERNEL_IRQ_H_
 
 #include <kernel/types.h>
-#include <syllable/kernel.h>
+#include <kernel/syscall.h>
 
 #define	IRQ_COUNT	16
 #define	TIMER_IRQ	0

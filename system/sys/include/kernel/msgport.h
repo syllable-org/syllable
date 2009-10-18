@@ -41,4 +41,6 @@ port_id sys_find_port( const char* pzPortname );
 
 size_t sys_get_msg_size( port_id hPort );
 
+port_id	 sys_get_app_server_port( void );
+
 #endif	/* __F_KERNEL_MSGPORTS_H__ */

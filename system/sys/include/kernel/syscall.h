@@ -17,34 +17,39 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_KERNEL_PGROUPS_H__
-#define __F_KERNEL_PGROUPS_H__
+#ifndef __F_KERNEL_SYSCALL_H__
+#define __F_KERNEL_SYSCALL_H__
 
 #include <kernel/types.h>
 
-int handle_signals( int dummy );
-int is_orphaned_pgrp( int nProcessGroup );
+/* This struct defines the way the registers are stored on the
+   stack during a system call. */
 
-int	sys_killpg( const pid_t nGrp, const int nSigNum );
-int	sys_kill_proc( proc_id hProcess, int nSigNum );
+typedef struct
+{
+    long 	ebx;
+    long 	ecx;
+    long 	edx;
+    long 	esi;
+    long	edi;
+    long 	ebp;
+    long 	eax;
+    uint16	ds, __dsu;
+    uint16	es, __esu;
+    uint16	fs, __fsu;
+    uint16	gs, __gsu;
+    long 	orig_eax;
+    long 	eip;
+    uint16	cs, __csu;
+    long 	eflags;
+    long 	oldesp;
+    uint16	oldss, __ssu;
+} SysCallRegs_s;
 
-int	killpg( pid_t nGrp, int nSigNum );
-int	kill_proc( proc_id hProcess, int nSigNum );
+void print_registers( SysCallRegs_s* psRegs );
 
-int setpgid( pid_t a_hDest, pid_t a_hGroup );
-int getpgid( pid_t hPid );
-pid_t getpgrp(void);
-pid_t getppid(void);
-int getsid( pid_t hPid );
-int setsid(void);
-gid_t getegid(void);
-uid_t geteuid(void);
-gid_t getfsgid(void);
-uid_t getfsuid(void);
-gid_t getgid(void);
-int getgroups(int _size, gid_t *grouplist);
-uid_t getuid(void);
-int setgid(gid_t _gid);
-int setuid( uid_t uid );
+int exit_from_sys_call( void );
 
-#endif	/* __F_KERNEL_PGROUPS_H__ */
+#include <syllable/syscall.h>
+
+#endif	/* __F_KERNEL_SYSCALL_H__ */

@@ -73,7 +73,7 @@ typedef struct {
 } elf_fpxregset_t;
 
 
-/* Keep this in sync with SysCallRegs_s in atheos/kernel.h ! */
+/* Keep this in sync with SysCallRegs_s in kernel/syscall.h ! */
 struct user_regs_struct {
 	long ebx, ecx, edx, esi, edi, ebp, eax;
 	unsigned short ds, __ds, es, __es;

@@ -17,10 +17,14 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef	__F_KERNEL_V86_H__
-#define	__F_KERNEL_V86_H__
+#ifndef	__F_SYLLABLE_V86_H__
+#define	__F_SYLLABLE_V86_H__
 
-#include <kernel/types.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <syllable/inttypes.h>
 
 struct RMREGS
 {
@@ -36,4 +40,10 @@ struct RMREGS
 	uint16	ES,DS,FS,GS,IP,CS,SP,SS;
 };
 
-#endif /* __F_KERNEL_V86_H__ */
+int	realint( int num, struct RMREGS *rm );
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __F_SYLLABLE_V86_H__ */

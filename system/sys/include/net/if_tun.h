@@ -25,7 +25,6 @@
 #include <atheos/types.h>
 #include <atheos/device.h>
 #include <atheos/filesystem.h>
-#include <atheos/kernel.h>
 
 #include <net/net.h>
 #include <net/packet.h>

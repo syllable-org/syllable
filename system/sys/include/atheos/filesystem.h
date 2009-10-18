@@ -138,8 +138,14 @@ status_t get_directory_path( int nFD, char* pzBuffer, int nBufLen );
 int get_mount_point_count(void);
 int get_mount_point( int nIndex, char* pzBuffer, int nBufLen );
 
+int	get_system_path( char* pzBuffer, int nBufLen );
+
 enum { IMGFILE_BIN_DIR = -2 };
 int open_image_file( int nImageID );
+
+int initialize_fs( const char* pzDevPath, const char* pzFsType, const char* pzVolName, void* pArgs, int nArgLen );
+int mount( const char* pzDevName, const char* pzDirName, const char* pzFSName, int nFlags, const void* pData );
+int unmount( const char* pzPath, bool bForce );
 
 /* Directory relative OPs */
 int based_open( int nRootFD, const char *pzPath, int nFlags, ... );

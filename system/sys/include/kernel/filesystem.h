@@ -230,16 +230,22 @@ typedef	struct
 int fs_init( const char* pzName, FSOperations_s** ppsOps );
 typedef int init_fs_func( const char* pzName, FSOperations_s** ppsOps );
 
+/* Syscalls */
+int sys_initialize_fs( const char* pzDevPath, const char* pzFsType, const char* pzVolName, void* pArgs, int nArgLen );
+int sys_mount( const char* pzDevName, const char* pzDirName, const char* pzFSName, int nFlags, const void* pData );
+int sys_unmount( const char* pzPath, bool bForce );
+int	sys_get_system_path( char* pzBuffer, int nBufLen );
+
 /* Kernel file functions */
-int	open( const char *pzName, int nFlags, ... );
-int	close( int nFileDesc );
+int open( const char *pzName, int nFlags, ... );
+int close( int nFileDesc );
 int pipe( int* pnFiles );
-ssize_t	read( int nFileDesc, void* pBuffer, size_t	nLength );
-int	dup( int nSrc );
-int	dup2( int nSrc, int nDst );
-int	symlink( const char* pzSrc, const char* pzDst );
-int	chdir( const char* pzPath );
-int	fchdir( int nFile );
+ssize_t read( int nFileDesc, void* pBuffer, size_t	nLength );
+int dup( int nSrc );
+int dup2( int nSrc, int nDst );
+int symlink( const char* pzSrc, const char* pzDst );
+int chdir( const char* pzPath );
+int fchdir( int nFile );
 int freadlink( int nFile, char* pzBuffer, size_t nBufSize );
 
 typedef int iterate_dir_callback( const char* pzPath, struct stat* psStat, void* pArg );
