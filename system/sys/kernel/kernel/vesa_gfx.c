@@ -18,8 +18,11 @@
  */
 
 #include <kernel/types.h>
+#include <kernel/areas.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
+#include <syllable/v86.h>
 #include <syllable/vesa_gfx.h>
 #include <posix/errno.h>
 

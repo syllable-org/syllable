@@ -21,9 +21,10 @@
 #include <kernel/kdebug.h>
 #include <kernel/threads.h>
 #include <kernel/elf.h>
+#include <kernel/malloc.h>
+#include <kernel/stdlib.h>
 #include <kernel/dirent.h>
 #include <kernel/ioctl.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <net/net.h>
 #include <net/if.h>

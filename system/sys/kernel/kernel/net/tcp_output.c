@@ -20,8 +20,9 @@
 #include <kernel/time.h>
 #include <kernel/socket.h>
 #include <kernel/semaphore.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <net/net.h>
 #include <net/in.h>

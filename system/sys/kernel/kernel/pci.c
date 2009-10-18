@@ -24,7 +24,6 @@
 #include <kernel/device.h>
 #include <kernel/pci.h>
 #include <kernel/spinlock.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

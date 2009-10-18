@@ -22,8 +22,8 @@
 
 #include <kernel/socket.h>
 #include <kernel/semaphore.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <net/net.h>
 #include <net/ip.h>

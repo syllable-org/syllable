@@ -22,7 +22,9 @@
 #include <kernel/semaphore.h>
 #include <kernel/time.h>
 #include <kernel/spinlock.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <posix/errno.h>
 #include <macros.h>
 

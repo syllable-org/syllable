@@ -27,7 +27,8 @@
 #include <kernel/types.h>
 #include <kernel/atomic.h>
 #include <kernel/dma.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/isa_io.h>
 #include <posix/errno.h>
 
 /* Macros for port I/O. */

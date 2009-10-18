@@ -22,8 +22,9 @@
 #include <kernel/spinlock.h>
 #include <kernel/areas.h>
 #include <kernel/tlb.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

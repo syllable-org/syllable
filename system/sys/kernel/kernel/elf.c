@@ -22,9 +22,12 @@
 #include <kernel/semaphore.h>
 #include <kernel/device.h>
 #include <kernel/smp.h>
+#include <kernel/args.h>
+#include <kernel/time.h>
 #include <kernel/ctype.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/fcntl.h>
 #include <posix/errno.h>
 #include <posix/limits.h>

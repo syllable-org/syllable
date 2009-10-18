@@ -44,10 +44,16 @@
 #include <kernel/tlb.h>
 #include <kernel/sysinfo.h>
 #include <kernel/pgroups.h>
+#include <kernel/args.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
+#include <kernel/isa_io.h>
+#include <kernel/schedule.h>
 #include <kernel/fcntl.h>
 #include <kernel/ioctl.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
+#include <syllable/v86.h>
+#include <syllable/power.h>
 #include <posix/unistd.h>
 #include <posix/signal.h>
 #include <net/net.h>

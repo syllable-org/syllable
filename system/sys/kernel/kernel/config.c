@@ -24,6 +24,9 @@
 #include <kernel/device.h>
 #include <kernel/config.h>
 #include <kernel/ctype.h>
+#include <kernel/args.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/fcntl.h>
 #include <kernel/kdebug.h>
 #include <posix/errno.h>

@@ -31,8 +31,9 @@
 #include <kernel/signal.h>
 #include <kernel/termios.h>
 #include <kernel/pgroups.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/ioctls.h>
 #include <macros.h>

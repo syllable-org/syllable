@@ -25,7 +25,7 @@
 #include <kernel/pci.h>
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
 #include <posix/unistd.h>
 #include <posix/errno.h>
 #include <macros.h>

@@ -48,7 +48,10 @@
 #include <kernel/areas.h>
 #include <kernel/mman.h>
 #include <kernel/tlb.h>
-#include <syllable/kernel.h>
+#include <kernel/time.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
+#include <kernel/schedule.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
 

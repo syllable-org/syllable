@@ -19,6 +19,8 @@
 
 #include <kernel/types.h>
 #include <kernel/threads.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
 #include <posix/errno.h>
 

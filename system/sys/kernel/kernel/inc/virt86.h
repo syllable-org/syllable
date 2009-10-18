@@ -22,6 +22,7 @@
 #define __F_VIRT86_H__
 
 #include <kernel/types.h>
+#include <kernel/syscall.h>
 
 typedef struct
 {

@@ -19,7 +19,8 @@
  */
 
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/isa_io.h>
 
 static int g_nCsrX = 0;
 static int g_nCsrY = 0;

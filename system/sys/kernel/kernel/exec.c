@@ -24,9 +24,10 @@
 #include <kernel/areas.h>
 #include <kernel/elf.h>
 #include <kernel/smp.h>
+#include <kernel/stdlib.h>
 #include <kernel/fcntl.h>
-#include <syllable/kernel.h>
-#include <syllable/syscall.h>
+#include <kernel/syscall.h>
+#include <kernel/malloc.h>
 #include <posix/errno.h>
 #include <posix/limits.h>
 #include <macros.h>

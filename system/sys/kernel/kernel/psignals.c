@@ -24,7 +24,9 @@
 #include <kernel/strace.h>
 #include <kernel/spinlock.h>
 #include <kernel/pgroups.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
+#include <kernel/schedule.h>
 #include <syllable/syscall.h>
 #include <syllable/sigcontext.h>
 #include <posix/errno.h>

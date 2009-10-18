@@ -10,8 +10,9 @@
 #include <kernel/semaphore.h>
 #include <kernel/resources.h>
 #include <kernel/spinlock.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

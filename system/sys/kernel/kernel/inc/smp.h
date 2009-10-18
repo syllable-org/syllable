@@ -22,7 +22,6 @@
 #define __F_SMP_H__
 
 #include <kernel/types.h>
-#include <syllable/kernel.h>
 
 #include <inc/typedefs.h>
 #include <inc/intel.h>

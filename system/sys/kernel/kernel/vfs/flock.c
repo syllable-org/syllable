@@ -20,9 +20,10 @@
 #include <kernel/types.h>
 #include <kernel/semaphore.h>
 #include <kernel/filesystem.h>
+#include <kernel/stdlib.h>
 #include <kernel/fcntl.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/unistd.h>
 #include <posix/errno.h>
 #include <macros.h>

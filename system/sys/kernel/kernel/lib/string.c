@@ -15,8 +15,9 @@
 #include <kernel/types.h>
 #include <kernel/ctype.h>
 #include <kernel/string.h>
+#include <kernel/areas.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <macros.h>
 
 char *___strtok = NULL;

@@ -22,8 +22,8 @@
 #include <kernel/spinlock.h>
 #include <kernel/bcache.h>
 #include <kernel/tlb.h>
+#include <kernel/stdlib.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

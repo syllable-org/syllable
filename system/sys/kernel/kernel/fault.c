@@ -21,7 +21,8 @@
 #include <kernel/irq.h>
 #include <kernel/kdebug.h>
 #include <kernel/image.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
 #include <posix/errno.h>
 #include <macros.h>
 

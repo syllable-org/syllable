@@ -24,8 +24,8 @@
 #include <kernel/spinlock.h>
 #include <kernel/udelay.h>
 #include <kernel/sysinfo.h>
+#include <kernel/stdlib.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 
 #include <inc/scheduler.h>
 #include <inc/sysbase.h>

@@ -22,9 +22,12 @@
 #include <kernel/isa_io.h>
 #include <kernel/irq.h>
 #include <kernel/spinlock.h>
+#include <kernel/time.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/ctype.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
+#include <syllable/power.h>
 #include <posix/errno.h>
 
 #include <macros.h>

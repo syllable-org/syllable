@@ -24,11 +24,12 @@
 #include <kernel/semaphore.h>
 #include <kernel/config.h>
 #include <kernel/image.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/dirent.h>
 #include <kernel/fcntl.h>
 #include <kernel/stat.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

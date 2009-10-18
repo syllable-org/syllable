@@ -24,7 +24,8 @@
 #include <kernel/kdebug.h>
 #include <kernel/image.h>
 #include <kernel/fs_attribs.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <posix/errno.h>
 #include <macros.h>
 

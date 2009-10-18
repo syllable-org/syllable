@@ -27,9 +27,11 @@
 #include <kernel/device.h>
 #include <kernel/resource.h>
 #include <kernel/sysinfo.h>
+#include <kernel/syscall.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
-#include <syllable/syscall.h>
+#include <syllable/v86.h>
 #include <posix/errno.h>
 #include <macros.h>
 

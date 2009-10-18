@@ -21,8 +21,8 @@
 #include <kernel/areas.h>
 #include <kernel/irq.h>
 #include <kernel/signal.h>
+#include <kernel/stdlib.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <syllable/ptrace.h>
 #include <posix/errno.h>
 #include <macros.h>

@@ -22,7 +22,8 @@
 #include <kernel/smp.h>
 #include <kernel/kdebug.h>
 #include <kernel/atomic.h>
-#include <syllable/kernel.h>
+#include <kernel/areas.h>
+#include <kernel/malloc.h>
 #include <posix/errno.h>
 
 #include <macros.h>

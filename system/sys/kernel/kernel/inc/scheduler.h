@@ -27,6 +27,8 @@
 #include <kernel/strace.h>
 #include <kernel/signal.h>
 #include <kernel/dlist.h>
+#include <kernel/syscall.h>
+#include <kernel/timer.h>
 #include <posix/param.h>
 
 #include <inc/typedefs.h>

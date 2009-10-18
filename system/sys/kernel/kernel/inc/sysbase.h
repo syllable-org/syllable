@@ -23,7 +23,6 @@
 #include <kernel/types.h>
 #include <kernel/filesystem.h>
 #include <kernel/bootmodules.h>
-#include <syllable/kernel.h>
 
 #include <inc/intel.h>
 #include <inc/mman.h>

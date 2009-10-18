@@ -18,8 +18,8 @@
 #include <kernel/types.h>
 #include <kernel/spinlock.h>
 #include <kernel/smp.h>
+#include <kernel/stdlib.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 
 #include <inc/scheduler.h>

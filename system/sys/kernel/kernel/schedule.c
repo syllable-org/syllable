@@ -20,8 +20,9 @@
 #include <kernel/time.h>
 #include <kernel/spinlock.h>
 #include <kernel/resource.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/wait.h>
 #include <macros.h>

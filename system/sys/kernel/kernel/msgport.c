@@ -22,8 +22,10 @@
 #include <kernel/types.h>
 #include <kernel/msgport.h>
 #include <kernel/semaphore.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

@@ -22,7 +22,7 @@
 #include <kernel/areas.h>
 #include <kernel/irq.h>
 #include <kernel/sysinfo.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
 
 #include <inc/apic.h>
 #include <inc/scheduler.h>

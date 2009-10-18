@@ -21,9 +21,12 @@
 #include <kernel/irq.h>
 #include <kernel/smp.h>
 #include <kernel/tlb.h>
+#include <kernel/syscall.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
+#include <kernel/schedule.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
-#include <syllable/syscall.h>
+#include <syllable/v86.h>
 #include <posix/errno.h>
 #include <macros.h>
 

@@ -21,8 +21,9 @@
 #include <kernel/time.h>
 #include <kernel/semaphore.h>
 #include <kernel/socket.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
 #include <net/net.h>

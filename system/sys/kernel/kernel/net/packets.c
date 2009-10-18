@@ -26,8 +26,9 @@
 #include <kernel/time.h>
 #include <kernel/semaphore.h>
 #include <kernel/spinlock.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <net/net.h>
 #include <net/ip.h>
 #include <net/if_ether.h>

@@ -25,7 +25,9 @@
 #include <kernel/irq.h>
 #include <kernel/udelay.h>
 #include <kernel/tlb.h>
-#include <syllable/kernel.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <posix/errno.h>
 
 #include <inc/smp.h>

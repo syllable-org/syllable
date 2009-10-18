@@ -22,7 +22,8 @@
 #include <kernel/bcache.h>
 #include <kernel/kdebug.h>
 #include <kernel/areas.h>
-#include <syllable/kernel.h>
+#include <kernel/time.h>
+#include <kernel/stdlib.h>
 #include <posix/errno.h>
 #include <macros.h>
 

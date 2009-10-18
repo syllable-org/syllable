@@ -22,8 +22,12 @@
 #include <kernel/msgport.h>
 #include <kernel/areas.h>
 #include <kernel/spinlock.h>
+#include <kernel/syscall.h>
+#include <kernel/pgroups.h>
+#include <kernel/stdlib.h>
+#include <kernel/schedule.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/select.h>
 #include <macros.h>

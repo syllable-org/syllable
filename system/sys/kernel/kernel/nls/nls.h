@@ -4,7 +4,6 @@
 #include <kernel/list.h>
 #include <kernel/nls.h>
 #include <kernel/atomic.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <macros.h>
 

@@ -24,8 +24,9 @@
 #include <kernel/fcntl.h>
 #include <kernel/signal.h>
 #include <kernel/uio.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <posix/errno.h>
 #include <posix/ioctls.h>
 #include <net/net.h>

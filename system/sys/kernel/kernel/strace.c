@@ -21,8 +21,9 @@
 #include <kernel/types.h>
 #include <kernel/strace.h>
 #include <kernel/spinlock.h>
+#include <kernel/stdlib.h>
+#include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <syllable/kernel.h>
 #include <syllable/syscall.h>
 #include <syllable/syscalltable.h>
 #include <posix/errno.h>
