@@ -6,8 +6,8 @@
 #include <net/nettypes.h>
 #include <atheos/socket.h>
 #include <net/in.h>
-#include <net/if.h>
-#include <net/if_ether.h>
+#include <kernel/if.h>
+#include <kernel/if_ether.h>
 #include <net/route.h>
 #include <net/packet.h>
 

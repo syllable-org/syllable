@@ -17,16 +17,16 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_ATHEOS_ICMP_H__
-#define __F_ATHEOS_ICMP_H__
+#ifndef __F_NET_ICMP_H__
+#define __F_NET_ICMP_H__
 
-#include <atheos/types.h>
+#include <syllable/inttypes.h>
 
 #define ICMP_ECHOREPLY		0	/* Echo Reply			*/
 #define ICMP_DEST_UNREACH	3	/* Destination Unreachable	*/
 #define ICMP_SOURCE_QUENCH	4	/* Source Quench		*/
 #define ICMP_REDIRECT		5	/* Redirect (change route)	*/
-#define ICMP_ECHO		8	/* Echo Request			*/
+#define ICMP_ECHO			8	/* Echo Request			*/
 #define ICMP_TIME_EXCEEDED	11	/* Time Exceeded		*/
 #define ICMP_PARAMETERPROB	12	/* Parameter Problem		*/
 #define ICMP_TIMESTAMP		13	/* Timestamp Request		*/

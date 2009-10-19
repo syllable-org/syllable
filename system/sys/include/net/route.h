@@ -22,7 +22,8 @@
 #define _NET_ROUTE_H	1
 
 #include <atheos/types.h>
-#include <net/net.h>
+/* XXXKV: Include loop between net.h & route.h */
+//#include <net/net.h>
 
 /* This structure gets passed by the SIOCADDRT and SIOCDELRT ioctl calls. */
 struct rtentry
