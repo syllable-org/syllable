@@ -20,10 +20,10 @@
 #ifndef __F_KERNEL_IF_ETHER_H__
 #define __F_KERNEL_IF_ETHER_H__
 
-#include <posix/limits.h>
-
-#include <net/packet.h>
 #include <net/if_ether.h>
+
+#include <kernel/packet.h>
+#include <posix/limits.h>
 
 #define ETH_DEV_ID_LEN	16
 

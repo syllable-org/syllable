@@ -17,12 +17,13 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_ATHEOS_NET_UDP_H__
-#define __F_ATHEOS_NET_UDP_H__
+#ifndef __F_KERNEL_UDP_H__
+#define __F_KERNEL_UDP_H__
 
-#include <net/if.h>
 #include <net/nettypes.h>
-#include <net/route.h>
+
+#include <kernel/if.h>
+#include <kernel/route.h>
 
 struct _UDPHeader
 {
@@ -57,8 +58,8 @@ struct _UDPPort
   bool		 up_bHasSrcPortWC;
 };
 
-int udp_open( Socket_s* psSocket );
-
 int init_udp( void );
 
-#endif /* __F_ATHEOS_NET_UDP_H__ */
+int udp_open( Socket_s* psSocket );
+
+#endif	/* __F_KERNEL_UDP_H__ */

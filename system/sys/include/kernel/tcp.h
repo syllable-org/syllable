@@ -17,10 +17,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_NET_TCP_H__
-#define __F_NET_TCP_H__
+#ifndef __F_KERNEL_TCP_H__
+#define __F_KERNEL_TCP_H__
 
-#include <atheos/types.h>
+#include <kernel/types.h>
 
 typedef	long tcpseq;
 
@@ -74,7 +74,4 @@ int init_tcp( void );
 
 int tcp_open( Socket_s* psSocket );
 
-
-
-
-#endif /* __F_NET_TCP_H__ */
+#endif /* __F_KERNEL_TCP_H__ */

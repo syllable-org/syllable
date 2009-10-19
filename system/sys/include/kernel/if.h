@@ -22,9 +22,10 @@
 
 #include <net/nettypes.h>
 #include <net/if.h>
-#include <net/route.h>
-#include <net/if_ether.h>
-#include <net/packet.h>
+
+#include <kernel/route.h>
+#include <kernel/if_ether.h>
+#include <kernel/packet.h>
 
 /*
  * The ifaddr structure contains information about one address

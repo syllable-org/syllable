@@ -17,10 +17,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_NET_ICMP_H__
-#define __F_NET_ICMP_H__
+#ifndef __F_KERNEL_ICMP_H__
+#define __F_KERNEL_ICMP_H__
 
-#include <syllable/inttypes.h>
+#include <kernel/types.h>
 
 #define ICMP_ECHOREPLY		0	/* Echo Reply			*/
 #define ICMP_DEST_UNREACH	3	/* Destination Unreachable	*/
@@ -127,4 +127,4 @@ struct	_ICMPHeader
   } ic_uMsg;
 };
 
-#endif /* __F_ATHEOS_ICMP_H__ */
+#endif /* __F_KERNEL_ICMP_H__ */

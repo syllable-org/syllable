@@ -1,15 +1,32 @@
-#ifndef __F_ATHEOS_NET_H__
-#define __F_ATHEOS_NET_H__
+/*
+ *  The AtheOS kernel
+ *  Copyright (C) 1999 - 2001 Kurt Skauen
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of version 2 of the GNU Library
+ *  General Public License as published by the Free Software
+ *  Foundation.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
 
-#ifdef __KERNEL__
+#ifndef __F_KERNEL_NET_H__
+#define __F_KERNEL_NET_H__
 
 #include <net/nettypes.h>
-#include <atheos/socket.h>
-#include <net/in.h>
+#include <kernel/socket.h>
+#include <kernel/in.h>
 #include <kernel/if.h>
 #include <kernel/if_ether.h>
-#include <net/route.h>
-#include <net/packet.h>
+#include <kernel/route.h>
+#include <kernel/packet.h>
 
 #define __BYTE(v,n) ((((uint32)v) >> (n*8))&0xff)
 #define htonw(n) ( (__BYTE(n, 0 ) << 8) | __BYTE(n, 1 ) )
@@ -56,7 +73,6 @@ static inline uint16 ip_fast_csum( uint8 * iph, uint32 ihl )
   return(sum);
 }
 
-
 typedef struct _UdpPort UdpPort_s;
 struct _UdpPort
 {
@@ -64,12 +80,6 @@ struct _UdpPort
     NetQueue_s	up_sPackets;
     int		up_nPort;
 };
-
-
-#define MAX_NET_INTERFACES 64
-
-
-
 
 struct _ArpEntry
 {
@@ -81,11 +91,9 @@ struct _ArpEntry
 	bool        ae_bIsValid;
 };
 
-
 void init_ip( void );
 void init_arp( void );
 int  init_net_core( void );
-
 
 enum
 {
@@ -99,11 +107,7 @@ struct ifc_set_address
   struct sockaddr netmask;
 };
 
-/*
-int net_config( const char* pzDevice, int nCmd, void* pArg );
-int config_net_dev( const char* pzDev, const struct sockaddr* psAddr, const struct sockaddr* psNetMask );
-int sys_config_net_dev( const char* pzDev, const struct sockaddr* psAddr, const struct sockaddr* psNetMask );
-*/
+#define MAX_NET_INTERFACES 64
 
 int create_socket( bool bKernel, int nFamily, int nType, int nProtocol, bool bInitProtocol, Socket_s** ppsRes );
 
@@ -119,13 +123,11 @@ RawPort_s *raw_find_port(uint8 a_nIPProtocol);
 void format_ipaddress( char* pzBuffer, ipaddr_t pAddress );
 int parse_ipaddress( ipaddr_t pAddress, const char* pzBuffer );
 
-
 /* Packet buffer routines */
 PacketBuf_s* alloc_pkt_buffer( int nSize );
 PacketBuf_s* clone_pkt_buffer(PacketBuf_s * psBuf);
 void free_pkt_buffer( PacketBuf_s* psBuf );
 void reserve_pkt_header( PacketBuf_s* psBuf, int nSize );
-
 
 /* Packet queue routines */
 int 	     init_net_queue( NetQueue_s* psQueue );
@@ -133,19 +135,13 @@ void	     delete_net_queue( NetQueue_s* psQueue );
 void 	     enqueue_packet( NetQueue_s* psQueue, PacketBuf_s* psBuf );
 PacketBuf_s* remove_head_packet( NetQueue_s* psQueue, bigtime_t nTimeout );
 
-
 /* Send outgoing Ethernet packet */
 int send_packet( Route_s* psRoute, ipaddr_t pDstAddress, PacketBuf_s* psPkt );
 /* Dispatch incoming Ethernet packets */
 void dispatch_net_packet( PacketBuf_s* psPkt );
 
-
 /* Send IP packets */
 int ip_send( PacketBuf_s* psPkt );
 int ip_send_via( PacketBuf_s* psPkt, Route_s* psRoute );
 
-
-#endif /* __KERNEL__ */
-
-#endif /* __F_ATHEOS_NET_H__ */
-
+#endif /* __F_KERNEL_NET_H__ */

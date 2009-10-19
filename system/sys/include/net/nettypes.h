@@ -17,11 +17,12 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_ATHEOS_NETTYPES_H__
-#define __F_ATHEOS_NETTYPES_H__
+#ifndef __F_NET_NETTYPES_H__
+#define __F_NET_NETTYPES_H__
 
-#include <atheos/types.h>
+#include <syllable/types.h>
 
+/* XXXKV: These should all be moved to the struct definitions */
 typedef struct _Socket Socket_s;
 typedef struct _NetInterface NetInterface_s;
 typedef struct _EthernetHeader EthernetHeader_s;
@@ -44,4 +45,5 @@ typedef struct _PacketBuf PacketBuf_s;
 #define IP_ADR_LEN	4
 typedef uint8 ipaddr_t[IP_ADR_LEN];
 typedef uint8* ipaddr_p;
-#endif				/* __F_ATHEOS_NETTYPES_H__ */
+
+#endif	/* __F_NET_NETTYPES_H__ */

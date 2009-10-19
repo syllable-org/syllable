@@ -17,8 +17,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __ATHEOS_F_IP_H__
-#define __ATHEOS_F_IP_H__
+#ifndef __F_KERNEL_IP_H__
+#define __F_KERNEL_IP_H__
+
+#include <syllable/inttypes.h>
+#include <kernel/kdebug.h>
 
 #define	IP_CLASSA(x)	((x[0] & 0x80) == 0x00)	/* IP Class A address   */
 #define	IP_CLASSB(x)	((x[0] & 0xc0) == 0x80)	/* IP Class B address   */
@@ -50,39 +53,36 @@
 #define FORMAT_IP( ip, index )
 #endif
 
-
 #define IP_FRAG_TIME	(30LL * 1000000LL)	/* Time before discarding partly received packets */
 
+#define IPT_ICMP	1	/* protocol type for ICMP packets       */
+#define IPT_TCP		6	/* protocol type for TCP packets        */
+#define IPT_EGP		8	/* protocol type for EGP packets        */
+#define IPT_UDP		17	/* protocol type for UDP packets        */
+#define IPT_RAW		255
 
-#define	IPT_ICMP	1	/* protocol type for ICMP packets       */
-#define	IPT_TCP	6		/* protocol type for TCP packets        */
-#define 	IPT_EGP	8	/* protocol type for EGP packets        */
-#define	IPT_UDP	17		/* protocol type for UDP packets        */
-#define 	IPT_RAW	255
-
-#define IP_VERSION 4		/* Current protocol version */
-#define IP_MIN_SIZE 5		/* Minimum header size */
-//#define IP_TTL            255 /* Initial time-to-live */
+#define IP_VERSION	4	/* Current protocol version */
+#define IP_MIN_SIZE	5	/* Minimum header size */
 
 #define IP_MORE_FRAGMENTS	0x2000
 #define IP_DONT_FRAGMENT	0x4000
 #define IP_FRAGOFF_MASK		0x1fff
 
 struct _IpHeader {
-    /* WARNING: size/version Works for little-endian only */
-    uint8 iph_nHdrSize:4,	/* Header size (in int32's) */
-     iph_nVersion:4;
+	/* WARNING: size/version Works for little-endian only */
+	uint8 iph_nHdrSize:4,	/* Header size (in int32's) */
+	iph_nVersion:4;
 
-    uint8 iph_nTypeOfService;
-    uint16 iph_nPacketSize;
-    uint16 iph_nPacketId;
-    uint16 iph_nFragOffset;
-    uint8 iph_nTimeToLive;
-    uint8 iph_nProtocol;
-    uint16 iph_nCheckSum;
-    ipaddr_t iph_nSrcAddr;
-    ipaddr_t iph_nDstAddr;
-    /*The options start here. */
+	uint8 iph_nTypeOfService;
+	uint16 iph_nPacketSize;
+	uint16 iph_nPacketId;
+	uint16 iph_nFragOffset;
+	uint8 iph_nTimeToLive;
+	uint8 iph_nProtocol;
+	uint16 iph_nCheckSum;
+	ipaddr_t iph_nSrcAddr;
+	ipaddr_t iph_nDstAddr;
+	/*The options start here. */
 };
 
-#endif				/* __ATHEOS_F_IP_H__ */
+#endif	/* __F_KERNEL_IP_H__ */
