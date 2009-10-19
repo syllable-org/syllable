@@ -25,13 +25,13 @@
 #include <kernel/stdlib.h>
 #include <kernel/dirent.h>
 #include <kernel/ioctl.h>
+#include <kernel/if.h>
+#include <kernel/if_ether.h>
+#include <kernel/ip.h>
+#include <kernel/net.h>
+#include <kernel/route.h>
 #include <posix/errno.h>
-#include <net/net.h>
-#include <net/if.h>
-#include <net/if_ether.h>
 #include <net/sockios.h>
-#include <net/route.h>
-#include <net/ip.h>
 #include <macros.h>
 
 /* Selective debugging level overrides */

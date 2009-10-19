@@ -51,12 +51,14 @@
 #include <kernel/schedule.h>
 #include <kernel/fcntl.h>
 #include <kernel/ioctl.h>
+#include <kernel/if.h>
+#include <kernel/if_ether.h>
+#include <kernel/net.h>
 #include <kernel/kdebug.h>
 #include <syllable/v86.h>
 #include <syllable/power.h>
 #include <posix/unistd.h>
 #include <posix/signal.h>
-#include <net/net.h>
 
 #include <inc/ksyms.h>
 #include <inc/mman.h>

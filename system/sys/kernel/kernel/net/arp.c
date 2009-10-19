@@ -24,12 +24,12 @@
 #include <kernel/stdlib.h>
 #include <kernel/malloc.h>
 #include <kernel/kdebug.h>
+#include <kernel/if_arp.h>
+#include <kernel/if_ether.h>
+#include <kernel/ip.h>
+#include <kernel/net.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
-#include <net/net.h>
-#include <net/ip.h>
-#include <net/if_ether.h>
-#include <net/if_arp.h>
 #include <macros.h>
 
 /* Selective debugging level overrides */

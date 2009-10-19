@@ -29,9 +29,9 @@
 #include <kernel/stdlib.h>
 #include <kernel/malloc.h>
 #include <kernel/kdebug.h>
-#include <net/net.h>
-#include <net/ip.h>
-#include <net/if_ether.h>
+#include <kernel/if_ether.h>
+#include <kernel/ip.h>
+#include <kernel/net.h>
 #include <macros.h>
 
 #include <inc/sysbase.h>

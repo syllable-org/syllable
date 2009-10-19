@@ -37,10 +37,10 @@
 #include <kernel/malloc.h>
 #include <kernel/kdebug.h>
 #include <kernel/syscall.h>
+#include <kernel/net.h>
 #include <posix/wait.h>
 #include <posix/errno.h>
 #include <posix/unistd.h>
-#include <net/net.h>
 #include <macros.h>
 
 #include <vfs/vfs.h>
