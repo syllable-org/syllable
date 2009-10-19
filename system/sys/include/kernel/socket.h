@@ -24,6 +24,8 @@
 #include <kernel/filesystem.h>
 #include <net/nettypes.h>
 
+#include <syllable/socket.h>
+
 struct linger
 {
 	int l_onoff;			/* Linger active */
