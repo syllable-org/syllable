@@ -20,9 +20,12 @@
 #ifndef __F_NET_NETTYPES_H__
 #define __F_NET_NETTYPES_H__
 
-#include <syllable/types.h>
+#include <syllable/inttypes.h>
 
-/* XXXKV: These should all be moved to the struct definitions */
+/* This is pretty horible, but the network structures are all highly dependent
+   upon one another, so we basically have to declare every single type in
+   advance or the spaghetti monster will eat us. */
+
 typedef struct _Socket Socket_s;
 typedef struct _NetInterface NetInterface_s;
 typedef struct _EthernetHeader EthernetHeader_s;
