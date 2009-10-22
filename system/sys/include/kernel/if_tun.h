@@ -23,10 +23,11 @@
 #include <kernel/types.h>
 #include <kernel/device.h>
 #include <kernel/filesystem.h>
+#include <kernel/net.h>
+#include <kernel/packet.h>
 
-#include <net/net.h>
-#include <net/packet.h>
 #include <net/sockios.h>
+#include <net/if_tun.h>
 
 #include <posix/errno.h>
 
