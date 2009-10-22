@@ -24,6 +24,8 @@
 #define _NSIG_BPW	32
 #define _NSIG_WORDS	( _NSIG / _NSIG_BPW )
 
+#include <kernel/types.h>
+
 #include <posix/signal.h>
 
 /*
