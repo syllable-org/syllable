@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_KERNEL_DEVICE_H__
-#define __F_KERNEL_DEVICE_H__
+#ifndef __F_KERNEL_NET_DEVICE_H__
+#define __F_KERNEL_NET_DEVICE_H__
 
 #include <net/nettypes.h>
 #include <net/if.h>
@@ -126,4 +126,4 @@ struct net_device_stats
 #define netdev_priv(dev) \
 	(dev)->priv
 
-#endif	/* __F_KERNEL_DEVICE__H__ */
+#endif	/* __F_KERNEL_NET_DEVICE__H__ */
