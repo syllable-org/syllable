@@ -52,7 +52,7 @@
  */
 
 #ifndef __F_KERNEL_AGPGART_H_
-#define ___F_KERNEL_AGPGART_H_
+#define __F_KERNEL_AGPGART_H_
 
 #include <kernel/pci.h>
 #include <kernel/device.h>
