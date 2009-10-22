@@ -38,8 +38,7 @@
 #include <inc/scheduler.h>
 #include <inc/sysbase.h>
 
-/* XXXKV: This isn't good! Whatever is in this header we're using needs to move to a seperate header in <syllable/> */
-#include <gui/guidefines.h>
+#include <syllable/messages.h> /* For M_NODE_MONITOR */
 
 static int g_nLastMonitorID = 1;
 static sem_id g_hNodeMonitorMutex;
