@@ -51,22 +51,15 @@
  * SUCH DAMAGE.
  */
 
-#ifndef _SYLLABLE_AGPGART_H_
-#define _SYLLABLE_AGPGART_H_
+#ifndef __F_KERNEL_AGPGART_H_
+#define ___F_KERNEL_AGPGART_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-#if 0
-}
-#endif
-
-#include <atheos/pci.h>
-#include <atheos/device.h>
-#include <atheos/areas.h>
-#include <atheos/semaphore.h>
-#include <atheos/dlist.h>
-#include <atheos/kdebug.h>
+#include <kernel/pci.h>
+#include <kernel/device.h>
+#include <kernel/areas.h>
+#include <kernel/semaphore.h>
+#include <kernel/dlist.h>
+#include <kernel/kdebug.h>
 
 #ifdef __ENABLE_DEBUG__
 #define DEBUG_LIMIT	KERN_DEBUG
@@ -189,9 +182,5 @@ int	generic_free_memory(AGP_Memory_s *);
 int	generic_bind_memory(AGP_Memory_s *, uint32);
 int	generic_unbind_memory(AGP_Memory_s *);
 
-
-#ifdef __cplusplus
-}
-#endif
-#endif /* _SYLLABLE_AGPGART_H_ */
+#endif /* __F_KERNEL_AGPGART_H_ */
 

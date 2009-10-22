@@ -51,19 +51,12 @@
  * SUCH DAMAGE.
  */
 
-#ifndef _SYLLABLE_AGP_H_
-#define _SYLLABLE_AGP_H_
+#ifndef __F_KERNEL_AGP_H_
+#define __F_KERNEL_AGP_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-#if 0
-}
-#endif
-
-#include <atheos/types.h>
-#include <atheos/pci.h>
-#include <atheos/agpgart.h>
+#include <kernel/types.h>
+#include <kernel/pci.h>
+#include <kernel/agpgart.h>
 
 /*
  * The AGP gatt uses 4k pages irrespective of the host page size.
@@ -230,8 +223,5 @@ typedef struct
 
 void memory_info(void *pHandle, AGP_Memory_Info_s *psMemInfo);
 
-#ifdef __cplusplus
-}
-#endif
-#endif /* _SYLLABLE_AGP_H_ */
+#endif /* __F_KERNEL_AGP_H_ */
 
