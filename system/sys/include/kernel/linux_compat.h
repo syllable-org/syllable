@@ -20,10 +20,12 @@
 #ifndef	__F_SYLLABLE_LINUX_COMPAT_H__
 #define	__F_SYLLABLE_LINUX_COMPAT_H__
 
-#include <skernel/types.h>
+#include <kernel/types.h>
 #include <kernel/bitops.h>
+#include <kernel/malloc.h>
+#include <kernel/net.h>
+#include <kernel/kdebug.h>
 #include <posix/errno.h>
-#include <net/net.h>
 #include <macros.h>
 
 /* Linux pre-C99 types */
