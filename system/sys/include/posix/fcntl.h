@@ -20,6 +20,8 @@
 #ifndef __F_POSIX_FCNTL_H__
 #define __F_POSIX_FCNTL_H__
 
+#include <posix/types.h>
+
 #ifdef __cplusplus
 extern "C"{
 #endif
