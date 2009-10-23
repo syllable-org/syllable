@@ -17,24 +17,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef	__F_ATHEOS_TYPES_H__
-#define	__F_ATHEOS_TYPES_H__
+#ifndef __F_KERNEL_UNISTD_H__
+#define __F_KERNEL_UNISTD_H__
 
-#include <stdint.h>
-#include <inttypes.h>
+#include <kernel/types.h>	/* For ssize_t etc. */
 
-#include <stddef.h>
+#include <posix/unistd.h>
 
-#include <posix/types.h>
-
-#ifndef __cplusplus
-# include <stdbool.h>
-#endif
-
-/* XXXKV: I want to get rid of this */
-#ifndef __KERNEL__
-# include <syllable/pthreadtypes.h>
-#endif
-
-#endif	/* __F_ATHEOS_TYPES_H__ */
-
+#endif	/* __F_KERNEL_UNISTD_H__ */
