@@ -1,6 +1,8 @@
 #ifndef __F_POSIX_IOCTLS_H__
 #define __F_POSIX_IOCTLS_H__
 
+/* XXXKV: Fairly sure these should be in termios.h */
+
 #include <posix/ioctl.h>
 
 /* 0x54 is just a magic number to make these relatively unique ('T') */

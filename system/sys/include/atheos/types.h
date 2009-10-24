@@ -21,7 +21,7 @@
 #define	__F_ATHEOS_TYPES_H__
 
 #include <stdint.h>
-#include <inttypes.h>
+#include <syllable/inttypes.h>
 
 #include <stddef.h>
 

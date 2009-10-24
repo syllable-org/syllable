@@ -27,9 +27,6 @@
 #define MAX_BUSMANAGER_NAME_LENGTH	255	/* should be 256 */
 #define MAX_DEVICE_NAME_LENGTH		255	/* should be 256 */
 
-/* This is the maximum length for certain strings stored within the kernel. */
-#define	OS_NAME_LENGTH	64
-
 /* This is the maximum */
 #define MAX_KERNEL_ARGS	128
 
@@ -49,5 +46,7 @@
 
 /* Dual 8259A configuration has 16 interrupts, but APIC allows for more. */
 #define	IRQ_COUNT	16
+
+#include <syllable/stddef.h>
 
 #endif	/* __F_KERNEL_TUNABLES_H__ */

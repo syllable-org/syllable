@@ -17,9 +17,23 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_KERNEL_ATOMIC_H__
-#define __F_KERNEL_ATOMIC_H__
+#ifndef __F_SYLLABLE_KERNEL_H__
+#define __F_SYLLABLE_KERNEL_H__
 
-#include <syllable/atomic.h>
+#ifdef __KERNEL__
+# error "kernel.h is deprecated."
+#else
+# warning "kernel.h is deprecated."
+#endif
 
-#endif	/* __F_KERNEL_ATOMIC_H__ */
+/* The user-space parts of kernel.h has moved to one of the following headers */
+#include <syllable/sysinfo.h>
+#include <syllable/threads.h>
+#include <syllable/areas.h>
+#include <syllable/kdebug.h>
+#include <syllable/msgport.h>
+#include <syllable/filesystem.h>
+#include <syllable/power.h>
+#include <syllable/v86.h>
+
+#endif	/* __F_SYLLABLE_KERNEL_H__ */

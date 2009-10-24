@@ -20,7 +20,8 @@
 #ifndef	__F_ATHEOS_SEMAPHORES_H__
 #define	__F_ATHEOS_SEMAPHORES_H__
 
-#include <atheos/types.h>
+#include <syllable/types.h>
+#include <syllable/stddef.h>
 
 #ifdef __cplusplus
 extern "C" {

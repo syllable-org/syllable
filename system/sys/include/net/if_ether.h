@@ -21,7 +21,7 @@
 #ifndef __F_NET_IF_ETHER_H__
 #define __F_NET_IF_ETHER_H__
 
-#include <syllable/inttypes.h>
+#include <syllable/types.h>
 #include <net/nettypes.h>
 
 /*

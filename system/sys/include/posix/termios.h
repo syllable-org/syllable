@@ -21,6 +21,7 @@
 #define __F_POSIX_TERMIOS_H_
 
 #include <posix/termbits.h>
+#include <posix/ioctls.h>
 
 #ifdef __cplusplus
 extern "C" {

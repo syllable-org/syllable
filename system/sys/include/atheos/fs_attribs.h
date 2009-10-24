@@ -41,6 +41,18 @@ typedef struct attr_info
     int	  ai_type;
 } attr_info_s;
 
+/* Parameter block used internally for sys_read_attr() and sys_write_attr(). */
+typedef struct
+{
+    int		wa_nFile;
+    const char*	wa_pzName;
+    int		wa_nFlags;
+    int		wa_nType;
+    void*	wa_pBuffer;
+    off_t	wa_nPos;
+    size_t	wa_nLen;
+} WriteAttrParams_s;
+
 #ifndef __KERNEL__
 
 #include <dirent.h>

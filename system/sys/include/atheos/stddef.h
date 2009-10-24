@@ -17,9 +17,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __F_KERNEL_ATOMIC_H__
-#define __F_KERNEL_ATOMIC_H__
+#ifndef __F_SYLLABLE_STDDEF_H__
+#define __F_SYLLABLE_STDDEF_H__
 
-#include <syllable/atomic.h>
+/* This is the maximum length for certain strings stored within the kernel. */
+#define	OS_NAME_LENGTH	64
 
-#endif	/* __F_KERNEL_ATOMIC_H__ */
+#endif	/* __F_SYLLABLE_STDDEF_H__ */

@@ -38,11 +38,6 @@
 #define MEMF_CLEAR			0x00010000		/* kmalloc: return a zero filled area */
 #define MEMF_LOCKED			0x10000000		/* memory is non-pageable */
 
-/* Intel x86 has 4K pages */
-#define PAGE_SHIFT	12
-#define PAGE_SIZE	(1UL << PAGE_SHIFT)
-#define PAGE_MASK	(~(PAGE_SIZE-1))
-
 /* Convert to/from addresses/pages */
 #define atop(x)		(x >> PAGE_SHIFT)
 #define ptoa(x)		(x << PAGE_SHIFT)

@@ -66,6 +66,11 @@ typedef enum {
 #define AREA_ADDR_SPEC_MASK	0x00000f00
 #define AREA_TOP_DOWN		0x00001000
 
+/* Intel x86 has 4K pages */
+#define PAGE_SHIFT	12
+#define PAGE_SIZE	(1UL << PAGE_SHIFT)
+#define PAGE_MASK	(~(PAGE_SIZE-1))
+
 /* Areas API */
 area_id	create_area( const char* pzName, void** ppAddress, size_t nSize, size_t nMaxSize, flags_t nProtection, flags_t nLockMode );
 status_t delete_area( area_id hArea );
