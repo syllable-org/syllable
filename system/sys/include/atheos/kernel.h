@@ -26,6 +26,10 @@
 # warning "kernel.h is deprecated."
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* The user-space parts of kernel.h has moved to one of the following headers */
 #include <syllable/sysinfo.h>
 #include <syllable/threads.h>
@@ -35,5 +39,9 @@
 #include <syllable/filesystem.h>
 #include <syllable/power.h>
 #include <syllable/v86.h>
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_SYLLABLE_KERNEL_H__ */
