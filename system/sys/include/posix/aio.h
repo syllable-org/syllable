@@ -75,8 +75,6 @@ enum
 #define LIO_NOP LIO_NOP
 };
 
-#warning "In aio.h"
-
 #ifdef __cplusplus
 }
 #endif
