@@ -6,9 +6,9 @@ deps:
 
 install:
 	@cp -rp * $(DIST_TARGET_PATH)/
+	@ln -s atheos $(DIST_TARGET_PATH)/syllable
 	rm -rf $(DIST_TARGET_PATH)/CVS
 	rm $(DIST_TARGET_PATH)/Makefile
-# TODO: Create syllable -> atheos symlink
 
 doc:
 
