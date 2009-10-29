@@ -40,20 +40,20 @@ printf "\nBuild started at %s\n" "`date`" >> $LOG
 
 # Make sure we have the latest Builder
 echo "Updating Builder"
-unbuffer build update &>>$LOG
-unbuffer build log &>>$LOG
+unbuffer build update 1>>$LOG &2>1
+unbuffer build log 1>>$LOG &2>1
 sync
 
 # Build the 'system' profile
 
 cd $BUILD_DIR/system
-unbuffer build prepare system &>>$LOG
+unbuffer build prepare system 1>>$LOG &2>1
 unbuffer build log >> $SYSTEM_LOG
 unbuffer build log summary >> $SYSTEM_SUMMARY_LOG
 sync
 
 echo "image system"
-unbuffer image system &>>$LOG
+unbuffer image system 1>>$LOG &2>1
 unbuffer build log >> $SYSTEM_LOG
 unbuffer build log failures >> $SYSTEM_FAILURE_LOG
 unbuffer build log summary >> $SYSTEM_SUMMARY_LOG
@@ -62,13 +62,13 @@ sync
 # We have to build GrUB with GCC 3
 
 echo "Switching to GCC 3.4.3"
-unbuffer build install $HOME/Packages/gcc-3.4.3-3.i586.resource &>>$LOG
+unbuffer build install $HOME/Packages/gcc-3.4.3-3.i586.resource 1>>$LOG &2>1
 unbuffer build log >> $SYSTEM_LOG
 unbuffer build log summary >> $SYSTEM_SUMMARY_LOG
 sync
 
 echo "Building GrUB"
-unbuffer image sys/boot/grub-0.97 &>>$LOG
+unbuffer image sys/boot/grub-0.97 1>>$LOG &2>1
 unbuffer build log >> $SYSTEM_LOG
 # Doesn't work for a single module:
 #build log failures >> $SYSTEM_FAILURE_LOG
@@ -76,14 +76,14 @@ unbuffer build log summary >> $SYSTEM_SUMMARY_LOG
 sync
 
 echo "Switching to GCC 4.1.2"
-unbuffer build install $HOME/Packages/gcc-4.1.2-3.i586.resource &>>$LOG
+unbuffer build install $HOME/Packages/gcc-4.1.2-3.i586.resource 1>>$LOG &2>1
 unbuffer build log >> $SYSTEM_LOG
 unbuffer build log summary >> $SYSTEM_SUMMARY_LOG
 sync
 
 # Build the 'base' profile
 echo "image base"
-unbuffer image base &>>$LOG
+unbuffer image base 1>>$LOG &2>1
 unbuffer build log > $BASE_LOG
 unbuffer build log failures > $BASE_FAILURE_LOG
 unbuffer build log summary > $BASE_SUMMARY_LOG
@@ -91,12 +91,12 @@ sync
 
 # Add the compatability files
 echo "image compatibility"
-unbuffer image compatibility &>>$LOG
+unbuffer image compatibility 1>>$LOG &2>1
 sync
 
 # XXXKV: Now on with the show...
 cd stage/image
-unbuffer build scrub &>>$LOG
+unbuffer build scrub 1>>$LOG &2>1
 
 # Mark the end
 echo "Build complete"

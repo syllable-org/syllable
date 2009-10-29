@@ -33,7 +33,7 @@ printf "Update started at %s\n" "`date`"
 # Make sure we have the latest of source & scripts
 echo "Updating sources"
 cd $SOURCE_DIR/syllable
-unbuffer cvs -z9 -q update -r $CVS_TAG -dP &>>$LOG
+unbuffer cvs -z9 -q update -r $CVS_TAG -dP 1>>$LOG &2>1
 sync
 
 # Copy sources
