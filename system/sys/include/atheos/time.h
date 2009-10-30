@@ -20,7 +20,7 @@
 #ifndef __F_ATHEOS_TIME_H_
 #define __F_ATHEOS_TIME_H_
 
-#include <atheos/types.h>
+#include <syllable/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,6 +31,8 @@ bigtime_t get_real_time( void );
 bigtime_t get_idle_time( int nProcessor );
 
 int set_real_time( bigtime_t nTime );
+
+status_t snooze( bigtime_t nTimeout );
 
 #ifdef __cplusplus
 }

@@ -1,6 +1,10 @@
 #ifndef __F_SYLLABLE_ATOMIC_H__
 #define __F_SYLLABLE_ATOMIC_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Atomic operations that C can't guarantee us.  Useful for
  * resource counting etc..
@@ -257,5 +261,9 @@ static __inline__ int atomic_cmp_and_set( volatile void *dst, int exp, int src )
 
 	return res;
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_SYLLABLE_ATOMIC_H__ */

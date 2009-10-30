@@ -20,6 +20,10 @@
 #ifndef __F_POSIX_TYPES_H__
 #define __F_POSIX_TYPES_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #if !defined __time_t_defined && !defined time_t
 typedef long int time_t;
 # define time_t time_t
@@ -71,6 +75,10 @@ typedef long long off_t;
 /* XXXKV: Not sure this should be here */
 #ifndef __SYSCALL
 # define __SYSCALL(r,p)	r p;
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif /* __F_POSIX_TYPES_H__ */

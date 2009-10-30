@@ -22,6 +22,10 @@
 
 #include <posix/types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 struct iovec
 {
   void*	 iov_base;
@@ -30,5 +34,9 @@ struct iovec
 
 #define UIO_FASTIOV	8
 #define UIO_MAXIOV	1024
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_POSIX_UIO_H__ */

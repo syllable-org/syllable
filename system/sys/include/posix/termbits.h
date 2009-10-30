@@ -1,6 +1,10 @@
 #ifndef __F_POSIX_TERMBITS_H__
 #define __F_POSIX_TERMBITS_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef unsigned char	cc_t;
 typedef unsigned int	speed_t;
 typedef unsigned int	tcflag_t;
@@ -154,5 +158,9 @@ struct termios {
 #define	TCSANOW		0
 #define	TCSADRAIN	1
 #define	TCSAFLUSH	2
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_POSIX_TERMBITS_H__ */

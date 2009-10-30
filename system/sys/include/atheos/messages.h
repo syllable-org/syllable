@@ -20,6 +20,10 @@
 #ifndef __F_SYLLABLE_MESSAGES_H__
 #define __F_SYLLABLE_MESSAGES_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum {
 	/* Attention! */
 	/* Be careful not to change the sequence of message codes here, */
@@ -110,5 +114,9 @@ enum {
     
     M_FIRST_EVENT = 1000000000,
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_SYLLABLE_MESSAGES_H__ */

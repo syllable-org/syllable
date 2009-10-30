@@ -39,6 +39,7 @@ extern "C" {
 #include <syllable/filesystem.h>
 #include <syllable/power.h>
 #include <syllable/v86.h>
+#include <syllable/time.h>
 
 #ifdef __cplusplus
 }

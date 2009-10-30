@@ -23,6 +23,9 @@
 
 #include <atheos/types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EBX			0
 #define ECX			1
@@ -93,5 +96,9 @@ struct user {
 	struct user_regs_struct regs;
 	uint32 u_debugreg[8];
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_ATHEOS_PTRACE_H__ */

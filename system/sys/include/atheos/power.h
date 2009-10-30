@@ -20,8 +20,16 @@
 #ifndef __F_SYLLABLE_POWER_H__
 #define __F_SYLLABLE_POWER_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int reboot( void );
 void hard_reset( void );
 int apm_poweroff( void );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_SYLLABLE_POWER_H__ */

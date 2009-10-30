@@ -20,7 +20,15 @@
 #ifndef __F_SYLLABLE_STDDEF_H__
 #define __F_SYLLABLE_STDDEF_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* This is the maximum length for certain strings stored within the kernel. */
 #define	OS_NAME_LENGTH	64
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	/* __F_SYLLABLE_STDDEF_H__ */

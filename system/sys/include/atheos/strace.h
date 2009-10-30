@@ -23,6 +23,10 @@
 
 #include <atheos/types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Syscall groups.  These are bitfield values used in tr_nSysTraceMask */
 #define SYSC_GROUP_NONE		0x00	/* Not used, apart from STRACE_DISABLED */
 #define SYSC_GROUP_MM		1<<0	/* Memory management */
@@ -89,5 +93,9 @@ struct Errno_info
 status_t strace( thread_id hThread, int nTraceMask, int nTraceFlags );
 status_t strace_exclude( thread_id hThread, int nSyscall );
 status_t strace_include( thread_id hThread, int nSyscall );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
