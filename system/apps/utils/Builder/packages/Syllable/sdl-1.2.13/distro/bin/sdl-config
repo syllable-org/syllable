@@ -1,6 +1,6 @@
 #!/bin/sh
 
-prefix=$IMAGE/system/resources/sdl/1.2.13
+prefix=/system/indexes
 exec_prefix=${prefix}
 exec_prefix_set=no
 libdir=${exec_prefix}/lib
@@ -42,14 +42,14 @@ while test $# -gt 0; do
       echo 1.2.13
       ;;
     --cflags)
-      echo -I$IMAGE/system/development/resources/sdl/1.2.13/include/SDL -D_GNU_SOURCE=1
+      echo -I${exec_prefix}/include/SDL -D_GNU_SOURCE=1
       ;;
     --libs)
-      echo -L${exec_prefix}/lib  -lSDL 
+      echo -L${libdir}  -lSDL 
       ;;
     --static-libs)
 #    --libs|--static-libs)
-      echo -L${exec_prefix}/lib  -lSDL 
+      echo -L${libdir}  -lSDL 
       ;;
     *)
       echo "${usage}" 1>&2
@@ -58,4 +58,3 @@ while test $# -gt 0; do
   esac
   shift
 done
-
