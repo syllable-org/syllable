@@ -72,7 +72,7 @@ typedef enum {
 #define PAGE_MASK	(~(PAGE_SIZE-1))
 
 /* Areas API */
-area_id	create_area( const char* pzName, void** ppAddress, size_t nSize, size_t nMaxSize, flags_t nProtection, flags_t nLockMode );
+area_id	create_area( const char* pzName, void** ppAddress, size_t nSize, flags_t nProtection, flags_t nLockMode );
 status_t delete_area( area_id hArea );
 status_t remap_area( area_id nArea, void* pPhysAddress );
 area_id  clone_area( const char* pzName, void** ppAddress, flags_t nProtection, flags_t nLockMode, area_id hSrcArea );
