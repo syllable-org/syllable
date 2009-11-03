@@ -147,6 +147,8 @@ int initialize_fs( const char* pzDevPath, const char* pzFsType, const char* pzVo
 int mount( const char* pzDevName, const char* pzDirName, const char* pzFSName, int nFlags, const void* pData );
 int unmount( const char* pzPath, bool bForce );
 
+int freadlink( int nFile, char* pzBuffer, size_t nBufSize );
+
 /* Directory relative OPs */
 int based_open( int nRootFD, const char *pzPath, int nFlags, ... );
 int based_symlink( int nDir, const char* pzSrc, const char* pzDst );

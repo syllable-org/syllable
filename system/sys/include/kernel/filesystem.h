@@ -246,7 +246,6 @@ int dup2( int nSrc, int nDst );
 int symlink( const char* pzSrc, const char* pzDst );
 int chdir( const char* pzPath );
 int fchdir( int nFile );
-int freadlink( int nFile, char* pzBuffer, size_t nBufSize );
 
 typedef int iterate_dir_callback( const char* pzPath, struct stat* psStat, void* pArg );
 int iterate_directory( const char* pzDirectory, bool bIncludeDirs, iterate_dir_callback* pfCallback, void* pArg );
