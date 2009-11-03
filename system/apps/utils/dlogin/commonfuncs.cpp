@@ -22,6 +22,7 @@
 #include <pwd.h>
 #include <string>
 #include <posix/wait.h>
+#include <syllable/sysinfo.h>
 
 #include "commonfuncs.h"
 #include "mainwindow.h"

@@ -3,6 +3,7 @@
 #include "messages.h"
 
 #include <gui/requesters.h>
+#include <syllable/power.h>
 
 #include "resources/dlogin.h"
 
