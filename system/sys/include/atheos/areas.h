@@ -71,6 +71,9 @@ typedef enum {
 #define PAGE_SIZE	(1UL << PAGE_SHIFT)
 #define PAGE_MASK	(~(PAGE_SIZE-1))
 
+/* to align the pointer to the (next) page boundary */
+#define PAGE_ALIGN(addr)	(((addr)+PAGE_SIZE-1)&PAGE_MASK)
+
 /* Areas API */
 area_id	create_area( const char* pzName, void** ppAddress, size_t nSize, flags_t nProtection, flags_t nLockMode );
 status_t delete_area( area_id hArea );

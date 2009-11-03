@@ -42,8 +42,6 @@
 #define atop(x)		(x >> PAGE_SHIFT)
 #define ptoa(x)		(x << PAGE_SHIFT)
 
-/* to align the pointer to the (next) page boundary */
-#define PAGE_ALIGN(addr)	(((addr)+PAGE_SIZE-1)&PAGE_MASK)
 #define PAGE_NR(addr)		(((unsigned long)(addr)) >> PAGE_SHIFT)
 
 #define	AREA_REMAPPED	0x0020

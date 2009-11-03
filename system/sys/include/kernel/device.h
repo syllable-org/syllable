@@ -138,17 +138,6 @@ int delete_device_node( int nHandle );
 int rename_device_node( int nHandle, const char* pzNewPath );
 
 /* Block devices */
-typedef struct device_geometry
-{
-  uint64 sector_count;
-  uint64 cylinder_count;
-  uint32 sectors_per_track;
-  uint32 head_count;
-  uint32 bytes_per_sector;
-  bool	read_only;
-  bool	removable;
-} device_geometry;
-
 typedef struct
 {
     off_t	p_nStart;	/* Offset in bytes */

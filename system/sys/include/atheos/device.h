@@ -22,6 +22,7 @@
 
 #include <posix/ioctl.h>
 #include <posix/limits.h>
+#include <syllable/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -41,6 +42,18 @@ enum
 	
 	IOCTL_USER = 100000000
 };
+
+/* Block device information */
+typedef struct device_geometry
+{
+  uint64 sector_count;
+  uint64 cylinder_count;
+  uint32 sectors_per_track;
+  uint32 head_count;
+  uint32 bytes_per_sector;
+  bool	read_only;
+  bool	removable;
+} device_geometry;
 
 #ifdef __cplusplus
 }
