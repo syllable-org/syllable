@@ -1,20 +1,21 @@
 authors				Kaj de Vos
 status				testing
-notes				Contains Debian specific machinery in debian/ and sbin/update-ca-certificates
 
 headline			Common CA certificates
 description
 	This package includes PEM files of CA certificates to allow SSL-based applications to check for the authenticity of SSL connections.
+
 	It includes, among others, certificate authorities used by the Debian infrastructure and those shipped with Mozilla's browsers.
+
 	Please note that certificate authorities whose certificates are included in this package are not in any way audited for trustworthiness and RFC 3647 compliance, and that full responsibility to assess them belongs to the local system administrator.
 licenses			GPL-2+ MPL-1.1 other
 
 home				packages.debian.org/sid/ca-certificates
-packages			ca-certificates_20090709
+packages			ca-certificates_20080809
 locations			http://ftp.de.debian.org/debian/pool/main/c/ca-certificates/
 
-;install-prefix-var	CERTSDIR
-;system-prefix-var	DESTDIR
+install-prefix-var	CERTSDIR
+system-prefix-var	DESTDIR
 
 install-tree
 	etc
@@ -26,10 +27,8 @@ install-files
 	brasil.gov.br/*.crt	etc/ssl/certs/
 	cacert.org/*.crt	etc/ssl/certs/
 	debconf.org/*.crt	etc/ssl/certs/
-	gouv.fr/*.crt		etc/ssl/certs/
-;	Hidden in a collection file now:
-;	mozilla/*.crt		etc/ssl/certs/
-;	quovadis.bm/*.crt	etc/ssl/certs/
+	mozilla/*.crt		etc/ssl/certs/
+	quovadis.bm/*.crt	etc/ssl/certs/
 	signet.pl/*.crt		etc/ssl/certs/
 	spi-inc.org/*.crt	etc/ssl/certs/
 	telesec.de/*.crt	etc/ssl/certs/
