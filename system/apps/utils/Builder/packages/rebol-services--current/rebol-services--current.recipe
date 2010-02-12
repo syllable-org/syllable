@@ -10,31 +10,41 @@ description
 	REBOL/Services implements a concept called a service oriented architecture or SOA for short. The basic idea of an SOA is that you send a request message to another program (a "service") that attempts to fulfill the request and return the result.
 licenses			BSD
 
-home
-	rebol.com/docs/services/
-;	rebol.net/rs/
-_files
-;	server.r client.r
-	examples.html
-;;	demos/rpc.r demos/server/services/rpc.r
-	tutorial.html
-packages			rebol-services-100
+home				rebol.com/docs/services/
 locations
-	http://www.rebol.com/downloads/
-;	http://rebol.net/rs/
 	http://rebol.com/docs/services/
+	http://www.rebol.com/downloads/
+packages			rebol-services-100
+files
+	tutorial.html
+	examples.html
+	code/simple.html
+	code/basic.html
+	code/guestbook.html
+	code/vote.html
+	code/shell.html
+	code/rpc.html
 
-run-needs			rebol
+run-needs			REBOL >= 2.6 < 3
 
 make				true
 
 install-tree
-	lib/
-	lib/REBOL/
+	lib
+	lib/REBOL
+	lib/REBOL/Services
+	documentation
+	documentation/code
 install				true
-install-files		*.r lib/REBOL/
+install-files
+	*.r				lib/REBOL/Services/
+	simple.html		documentation/code/
+	basic.html		documentation/code/
+	guestbook.html	documentation/code/
+	vote.html		documentation/code/
+	shell.html		documentation/code/
+	rpc.html		documentation/code/
 
 documentation
 	readme.txt
-;	tutorial.html examples.html
-;;	rpc.r
+	tutorial.html examples.html security.html faq.html
