@@ -1,7 +1,7 @@
 authors				Kristian Van Der Vliet
-status				developing
+status				testing
 
-build-needs			autoconf
+build-needs			AutoConfigure
 
 ; Manually patch in LibTool support:
 patch

@@ -10,7 +10,6 @@ description
 licenses			GPL+exception
 
 home				www.sane-project.org
-packages			sane-backends-1.0.20
 locations
 	ftp://ftp.sane-project.org/pub/sane/old-versions/sane-backends-1.0.20/
 	ftp://ftp2.sane-project.org/pub/sane/old-versions/sane-backends-1.0.20/
@@ -18,6 +17,7 @@ locations
 	ftp://ftp2.sane-project.org/pub/sane/sane-backends-1.0.20/
 ;	Delivers bogus .tar.bz2 file:
 ;	http://alioth.debian.org/frs/download.php/1669/
+packages			sane-backends-1.0.20
 
 recommends
 	LibUSB >= 0.1.8
@@ -30,8 +30,8 @@ recommends
 build-dir			.
 
 ;no-sysconfdir
-configure-options
-;	--sysconfdir=/etc
+_configure-options
+	--sysconfdir=/etc
 ;	--disable-shared
 ;	--enable-locking
 

@@ -2,5 +2,5 @@ authors				Kaj de Vos
 status				testing
 
 documentation
-	README README.linux LICENSE COPYING PROBLEMS NEWS ChangeLog AUTHORS PROJECTS
-;	doc
+	README README.linux LICENSE COPYING PROBLEMS NEWS ChangeLog AUTHORS
+;	doc/*
